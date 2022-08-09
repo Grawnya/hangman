@@ -7,7 +7,7 @@
 
 // start counter for wrong letters - only 7 possible wrong attempts 
 
-// Let the user both click/select the button on the screen and press the key
+// Let the user both click/select the button on the screen and press the key - can I just copy the keyboard from wordle and source it?
 
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
 
