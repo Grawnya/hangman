@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+:root {
+    --dark-green: #045b07;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    font-family: 'Pangolin', sans-serif;
+}
