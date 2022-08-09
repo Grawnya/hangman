@@ -16,7 +16,6 @@
 body {
     background-color: var(--dark-green);
     color: var(--white);
-    border: 5%;
 }
 
 /* Heading */
