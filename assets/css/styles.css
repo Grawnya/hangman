@@ -17,3 +17,17 @@ body {
     background-color: var(--dark-green);
     color: var(--white);
 }
+
+/* Heading */
+h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+/* Image */
+
+/* Word to Guess */
+
+/* Game Type Buttons */
+
+/* Keyboard */
