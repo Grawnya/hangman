@@ -16,6 +16,7 @@
 body {
     background-color: var(--dark-green);
     color: var(--white);
+    border: 5%;
 }
 
 /* Heading */
@@ -30,6 +31,14 @@ h1 {
 }
 
 /* Image */
+
+#full-hangman-start {
+    margin: 0 auto;
+    display: block;
+    padding: 0 5%;
+    width: 20%;
+    height: auto;
+}
 
 /* Word to Guess */
 
