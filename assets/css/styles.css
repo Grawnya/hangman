@@ -40,8 +40,13 @@ h1 {
 }
 
 /* Word to Guess */
+#guessing-letters {
+    text-align: center;
+}
+
 .word-letter {
     display: inline-block;
+    text-decoration: underline;
 }
 /* Game Type Buttons */
 
