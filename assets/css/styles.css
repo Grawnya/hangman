@@ -27,6 +27,7 @@ h1 {
 #logo {
     padding-right: 1%;
     padding-top: 1%;
+    height: 3rem;
 }
 
 /* Image */
@@ -34,8 +35,8 @@ h1 {
 #full-hangman-start {
     margin: 0 auto;
     display: block;
-    padding: 0 5%;
-    width: 20%;
+    padding: 5% 0; /* 1% for tablet+ */
+    width: 50%; /* 25% for tablet+ */
     height: auto;
 }
 
