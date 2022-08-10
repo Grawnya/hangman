@@ -3,6 +3,7 @@
 :root {
     --dark-green: #033e05;
     --white: #ffffff;
+    --yellow: #e3f906;
 }
 
 * {
@@ -54,20 +55,16 @@ h1 {
 /* Game Type Buttons */
 #game-type-buttons {
     text-align: center;
-    display: flex;
-    justify-content: center;
 }
 
 .btn {
     padding: 1rem;
     margin: 3%;
-    text-align: center;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     border-radius: 5%;
     background-color: var(--white);
     color: var(--dark-green);
-    max-width: 40%;
 }
 
 /* Keyboard */
