@@ -58,13 +58,17 @@ h1 {
 }
 
 .btn {
-    padding: 1rem;
+    padding: 1rem 3rem;
     margin: 3%;
     text-decoration: none;
     font-size: 1.5rem;
     border-radius: 5%;
     background-color: var(--white);
     color: var(--dark-green);
+}
+
+.btn:hover {
+    background-color: var(--yellow);
 }
 
 /* Keyboard */
