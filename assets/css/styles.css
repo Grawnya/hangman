@@ -21,7 +21,9 @@ body {
 
 /* Heading */
 h1 {
-    font-size: 4rem;
+    padding-top: 1rem;
+    font-size: 3.5rem;
+    height: 10vh;
     text-align: center;
 }
 
@@ -35,16 +37,17 @@ h1 {
 #full-hangman-start {
     margin: 0 auto;
     display: block;
-    padding: 5% 0; /* 1% for tablet+ */
-    width: 50%; /* 25% for tablet+ */
-    height: auto;
+    padding: 3% 0; /* 1% for tablet+ */
+    width: auto; /* 25% for tablet+ */
+    max-height: 40vh;
 }
 
 /* Word to Guess */
 #guessing-letters {
     text-align: center;
-    padding: 3% 0;
+    padding: 2% 0;
     font-size: 1.5rem;
+    max-height: 10vh;
 }
 
 .word-letter {
@@ -54,7 +57,10 @@ h1 {
 
 /* Game Type Buttons */
 #game-type-buttons {
-    text-align: center;
+    min-height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn {
@@ -73,16 +79,16 @@ h1 {
 
 /* Keyboard */
 #keyboard {
-    margin: 1rem 0;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: fixed;
     bottom: 0;
-    padding-bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
+    min-height: 20vh;
   }
   
   #keyboard div {
