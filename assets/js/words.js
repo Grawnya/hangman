@@ -84,7 +84,7 @@ export const WORDS = [
 'embrace',
 'promise',
 'restore',
-'realize',
+'realise',
 'picture',
 'compile',
 'extract',
