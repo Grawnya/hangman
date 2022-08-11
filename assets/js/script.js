@@ -1,10 +1,10 @@
 // start counter for wrong letters - only 7 possible wrong attempts 
-var counter = 0;
+var wrongAnswerCounter = 0;
 
-removeStartButton();
+clickStartButton();
 
 // start - removes the button and moves down the guessing-letters section
-function removeStartButton () {
+function clickStartButton () {
     document.addEventListener('click', function (event) {
         if (event.detail) {
             document.getElementById('game-type-buttons').remove();
@@ -16,9 +16,16 @@ function removeStartButton () {
 function formatafterStart () {
     document.getElementById('guessing-letters').style.paddingTop = "3rem";
     document.getElementById('full-hangman-start').style.paddingTop = "5%";
+    var startLetters = document.querySelectorAll('.word-letter');
+    for (each of startLetters) {
+        each.innerText = "_";
+    }
 }
 
 // only 7 letter words - get all possible options and randomly select one
+function randomlySelectWord () {
+
+}
 
 // set the number of underscores to the number of letters in the words
 
