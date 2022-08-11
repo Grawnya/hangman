@@ -1,9 +1,10 @@
-// start counter for wrong letters - only 7 possible wrong attempts 
+import { WORDS } from "./words.js";
 var wrongAnswerCounter = 0;
 
 clickStartButton();
+// var word = randomlySelectWord();
+// console.log(word);
 
-// start - removes the button and moves down the guessing-letters section
 function clickStartButton () {
     document.addEventListener('click', function (event) {
         if (event.detail) {
@@ -24,7 +25,9 @@ function formatafterStart () {
 
 // only 7 letter words - get all possible options and randomly select one
 function randomlySelectWord () {
-
+    var indexOfWordToGuess = Math.floor(Math.random() * WORDS.length);
+    var wordToGuess = WORDS[indexOfWordToGuess];
+    return wordToGuess;
 }
 
 // set the number of underscores to the number of letters in the words
