@@ -2,8 +2,8 @@ import { WORDS } from "./words.js";
 var wrongAnswerCounter = 0;
 
 clickStartButton();
-// var word = randomlySelectWord();
-// console.log(word);
+var word = randomlySelectWord();
+console.log(word);
 
 function clickStartButton () {
     document.addEventListener('click', function (event) {
@@ -21,30 +21,45 @@ function formatafterStart () {
     startLettersNodeList.forEach(function (item) {
         item.innerText = "_";
     });
-    // var startLetters = Array.from(startLettersNodeList);
-    // for (letter in startLetters) {
-    //     letter.innerText = "_";
-    // };
 }
 
-// only 7 letter words - get all possible options and randomly select one
 function randomlySelectWord () {
     var indexOfWordToGuess = Math.floor(Math.random() * WORDS.length);
     var wordToGuess = WORDS[indexOfWordToGuess];
     return wordToGuess;
 }
 
-// set the number of underscores to the number of letters in the words
+function selectLetter () {
+
+}
 
 // Let the user both click/select the button on the screen and press the key
 
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
+function wrongLetterSelected () {
+
+}
 
 /* if a letter is pressed and is right, the letter block turns green, the word checks if its equal to the original input
 and if not, it lets the user pick another letter */
+function rightLetterSelected () {
 
-// if the counter reaches 7, send message that lets the user play again
+}
 
 // if the word is obtained, send message to say well done and play again
+function winner () {
+    
+}
+
+// if the counter reaches 7, send message that lets the user play again
+function loser () {
+
+}
+
+
+function playAgain () {
+
+}
+
 
 // if time: make light and dark mode
