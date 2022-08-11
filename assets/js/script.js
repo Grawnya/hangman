@@ -1,10 +1,11 @@
+// start counter for wrong letters - only 7 possible wrong attempts 
+var counter = 0;
+
 // start - removes the button and moves down the guessing-letters section
 
-// only 7 letter words - get JSON of all possible options and randomly select one
+// only 7 letter words - get all possible options and randomly select one
 
 // set the number of underscores to the number of letters in the words
-
-// start counter for wrong letters - only 7 possible wrong attempts 
 
 // Let the user both click/select the button on the screen and press the key
 
