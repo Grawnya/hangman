@@ -73,10 +73,6 @@ h1 {
     color: var(--dark-green);
 }
 
-.btn:hover {
-    background-color: var(--yellow);
-}
-
 /* Keyboard */
 #keyboard {
     margin-top: 1rem;
