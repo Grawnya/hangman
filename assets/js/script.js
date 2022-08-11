@@ -1,7 +1,17 @@
 // start counter for wrong letters - only 7 possible wrong attempts 
 var counter = 0;
 
+removeStartButton();
+
 // start - removes the button and moves down the guessing-letters section
+function removeStartButton () {
+    document.addEventListener('click', function (event) {
+        if (event.detail) {
+            console.log('clicked');
+            document.getElementById('game-type-buttons').remove();
+        };
+    })
+}
 
 // only 7 letter words - get all possible options and randomly select one
 
