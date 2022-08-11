@@ -1,5 +1,6 @@
 import { WORDS } from "./words.js";
 var wrongAnswerCounter = 0;
+var lettersPressed = [];
 
 clickStartButton();
 var word = randomlySelectWord();
@@ -29,6 +30,7 @@ function randomlySelectWord () {
     return wordToGuess;
 }
 
+// also check if already selected, then counter is not changed
 function selectLetter () {
 
 }
@@ -46,7 +48,7 @@ function rightLetterSelected () {
 
 }
 
-// if the word is obtained, send message to say well done and play again
+// if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
     
 }
