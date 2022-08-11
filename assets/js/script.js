@@ -7,10 +7,15 @@ removeStartButton();
 function removeStartButton () {
     document.addEventListener('click', function (event) {
         if (event.detail) {
-            console.log('clicked');
             document.getElementById('game-type-buttons').remove();
+            formatafterStart();
         };
     })
+}
+
+function formatafterStart () {
+    document.getElementById('guessing-letters').style.paddingTop = "3rem";
+    document.getElementById('full-hangman-start').style.paddingTop = "5%";
 }
 
 // only 7 letter words - get all possible options and randomly select one
