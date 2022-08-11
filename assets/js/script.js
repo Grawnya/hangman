@@ -17,10 +17,14 @@ function clickStartButton () {
 function formatafterStart () {
     document.getElementById('guessing-letters').style.paddingTop = "3rem";
     document.getElementById('full-hangman-start').style.paddingTop = "5%";
-    var startLetters = document.querySelectorAll('.word-letter');
-    for (each of startLetters) {
-        each.innerText = "_";
-    }
+    var startLettersNodeList = document.querySelectorAll('.word-letter');
+    startLettersNodeList.forEach(function (item) {
+        item.innerText = "_";
+    });
+    // var startLetters = Array.from(startLettersNodeList);
+    // for (letter in startLetters) {
+    //     letter.innerText = "_";
+    // };
 }
 
 // only 7 letter words - get all possible options and randomly select one
