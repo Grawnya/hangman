@@ -1,6 +1,6 @@
 import { WORDS } from "./words.js";
+var wrongAnswerCounter = 0;
 document.addEventListener("DOMContentLoaded", function() {
-    var wrongAnswerCounter = 0;
     var lettersPressed = [];
 
     clickStartButton();
@@ -45,26 +45,29 @@ function keyboardSelectLetter (arr, word) {
 // Let the user both click/select the button on the screen and press the key
 function buttonPressed (key, arr, word) {
     if (!arr.includes(key) && word.indexOf(key) > -1) {
-        rightLetterSelected(key, arr);
+        rightLetterSelected(key);
     } else if (!arr.includes(key) && !word.indexOf(key) > -1) {
-        wrongLetterSelected(key, arr);
+        wrongLetterSelected(key);
+    } else if (!arr.includes(key)) {
+        arr.push(key);
     }
 }
 
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
-function wrongLetterSelected () {
-
+function wrongLetterSelected (key) {
+    wrongAnswerCounter += 1;
+    document.getElementById(key).style.backgroundColor = "#f81307";
 }
 
 /* if a letter is pressed and is right, the letter block turns green, the word checks if its equal to the original input
 and if not, it lets the user pick another letter */
-function rightLetterSelected (key, arr) {
-    arr.push(key);
+function rightLetterSelected (key) {
+    
 }
 
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
-    
+        
 }
 
 // if the counter reaches 7, send message that lets the user play again
@@ -76,6 +79,5 @@ function loser () {
 function playAgain () {
 
 }
-
 
 // if time: make light and dark mode
