@@ -1,10 +1,11 @@
 import { WORDS } from "./words.js";
-var wrongAnswerCounter = 0;
-var lettersPressed = [];
+document.addEventListener("DOMContentLoaded", function() {
+    var wrongAnswerCounter = 0;
+    var lettersPressed = [];
 
-clickStartButton();
-var word = randomlySelectWord();
-console.log(word);
+    clickStartButton();
+    var word = randomlySelectWord();
+})
 
 function clickStartButton () {
     document.addEventListener('click', function (event) {
@@ -30,9 +31,11 @@ function randomlySelectWord () {
     return wordToGuess;
 }
 
-// also check if already selected, then counter is not changed
+// also check if already selected, then counter is not changed - continue every time
 function selectLetter () {
-
+    document.addEventListener("keydown", function(event) {
+    
+    })
 }
 
 // Let the user both click/select the button on the screen and press the key
