@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     clickStartButton();
     var word = randomlySelectWord();
-    keyboardSelectLetter();
+    console.log(word);
+    keyboardSelectLetter(lettersPressed, word);
 })
 
 function clickStartButton () {
@@ -29,24 +30,24 @@ function formatafterStart () {
 function randomlySelectWord () {
     var indexOfWordToGuess = Math.floor(Math.random() * WORDS.length);
     var wordToGuess = WORDS[indexOfWordToGuess];
-    return wordToGuess;
+    return wordToGuess.toUpperCase();
 }
 
 // also check if already selected, then counter is not changed - continue every time
-function keyboardSelectLetter () {
+function keyboardSelectLetter (arr, word) {
     document.addEventListener("keydown", function(event) {
         let keyPressed = event.key;
         let upperKeyPressed = keyPressed.toUpperCase();
-        buttonPressed(upperKeyPressed, lettersPressed);
+        buttonPressed(upperKeyPressed, arr, word);
     })
 }
 
 // Let the user both click/select the button on the screen and press the key
-function buttonPressed (key, arr) {
-    console.log(arr);
-    if (!arr.includes(key)) {
-        arr.push(key);
-        console.log(arr);
+function buttonPressed (key, arr, word) {
+    if (!arr.includes(key) && word.indexOf(key) > -1) {
+        rightLetterSelected(key, arr);
+    } else if (!arr.includes(key) && !word.indexOf(key) > -1) {
+        wrongLetterSelected(key, arr);
     }
 }
 
@@ -57,8 +58,8 @@ function wrongLetterSelected () {
 
 /* if a letter is pressed and is right, the letter block turns green, the word checks if its equal to the original input
 and if not, it lets the user pick another letter */
-function rightLetterSelected () {
-
+function rightLetterSelected (key, arr) {
+    arr.push(key);
 }
 
 // if the word is obtained, send message to say well done with a leaderboard and play again
