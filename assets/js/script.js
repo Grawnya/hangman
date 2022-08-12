@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     clickStartButton();
     var word = randomlySelectWord();
+    keyboardSelectLetter();
 })
 
 function clickStartButton () {
@@ -32,13 +33,22 @@ function randomlySelectWord () {
 }
 
 // also check if already selected, then counter is not changed - continue every time
-function selectLetter () {
+function keyboardSelectLetter () {
     document.addEventListener("keydown", function(event) {
-    
+        let keyPressed = event.key;
+        let upperKeyPressed = keyPressed.toUpperCase();
+        buttonPressed(upperKeyPressed, lettersPressed);
     })
 }
 
 // Let the user both click/select the button on the screen and press the key
+function buttonPressed (key, arr) {
+    console.log(arr);
+    if (!arr.includes(key)) {
+        arr.push(key);
+        console.log(arr);
+    }
+}
 
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
 function wrongLetterSelected () {
