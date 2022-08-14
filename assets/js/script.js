@@ -12,7 +12,7 @@ mouseSelectLetter(lettersPressed, word)
 function clickStartButton () {
     document.addEventListener('click', function (event) {
         if (event.detail) {
-            document.getElementById('game-type-buttons').remove();
+            document.getElementById('game-type-buttons').style.visibility = 'hidden';
             formatafterStart();
         };
     })
@@ -74,16 +74,13 @@ function wrongLetterSelected (key) {
 and if not, it lets the user pick another letter */
 function rightLetterSelected (key) {
     document.getElementById(key).style.backgroundColor = "#0ff04d";
+    let suitableGap = document.getElementsByClassName("word-letter");
     for (let i = 0; i < individualLetters.length; i ++) {
-        console.log(each);
         if (key == individualLetters[i]) {
-            document.getElementsByClassName("word-letter")[individualLetters[i]].innerText = key;
+            suitableGap[i].innerText = individualLetters[i];
         }
     }
-    // document.getElementsByClassName("word-letter")[0].innerText = 'H';
 }
-
-
 
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
