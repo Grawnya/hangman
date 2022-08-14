@@ -1,9 +1,13 @@
 import { WORDS } from "./words.js";
-clickStartButton();
-
+document.getElementById('keyboard').style.visibility = 'hidden';
 var wrongAnswerCounter = 0;
 var lettersPressed = [];
 var lettersLeft = 7;
+window.onkeypress = function () {
+    return false;
+}
+clickStartButton();
+
 var word = randomlySelectWord();
 console.log(word);
 var individualLetters = word.split('');
@@ -13,7 +17,12 @@ mouseSelectLetter(lettersPressed, word)
 function clickStartButton () {
     document.addEventListener('click', function (event) {
         if (event.detail) {
+            window.onkeypress = function () {
+                return false;
+            }
             document.getElementById('game-type-buttons').style.visibility = 'hidden';
+            document.getElementById('keyboard').style.visibility = 'visible';
+            navigator.keyboard.unlock();
             formatafterStart();
         };
     })
@@ -57,9 +66,8 @@ function buttonPressed (key, arr, word) {
         rightLetterSelected(key);
     } else if (!arr.includes(key) && !word.indexOf(key) > -1) {
         wrongLetterSelected(key);
-    } else if (!arr.includes(key)) {
-        arr.push(key);
-    }
+    } 
+    addToPressedKeysArray(key, arr);
 }
 
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
@@ -89,10 +97,17 @@ function rightLetterSelected (key) {
     }
 }
 
+function addToPressedKeysArray (key, arr) {
+    if (!arr.includes(key)) {
+        arr.push(key);
+        console.log(arr);
+    }
+}
+
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
-        console.log("winner");
-    }
+    console.log("winner");
+}
     
 // if the counter reaches 7, send message that lets the user play again
 function loser () {
