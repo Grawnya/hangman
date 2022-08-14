@@ -1,8 +1,9 @@
 import { WORDS } from "./words.js";
+clickStartButton();
+
 var wrongAnswerCounter = 0;
 var lettersPressed = [];
-
-clickStartButton();
+var lettersLeft = 7;
 var word = randomlySelectWord();
 console.log(word);
 var individualLetters = word.split('');
@@ -67,6 +68,8 @@ function wrongLetterSelected (key) {
     if (wrongAnswerCounter < 7) {
         document.getElementById(key).style.backgroundColor = "#f81307";
         // new image
+    } else {
+        loser();
     }
 }
 
@@ -76,20 +79,24 @@ function rightLetterSelected (key) {
     document.getElementById(key).style.backgroundColor = "#0ff04d";
     let suitableGap = document.getElementsByClassName("word-letter");
     for (let i = 0; i < individualLetters.length; i ++) {
-        if (key == individualLetters[i]) {
+        if (key == individualLetters[i] && lettersLeft != 0 && !lettersPressed.includes(key)) {
             suitableGap[i].innerText = individualLetters[i];
+            lettersLeft -= 1;
+        } 
+        if (lettersLeft == 0) {
+            winner();
         }
     }
 }
 
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
-        
-}
-
+        console.log("winner");
+    }
+    
 // if the counter reaches 7, send message that lets the user play again
 function loser () {
-
+    console.log("loser");
 }
 
 
