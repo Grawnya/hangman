@@ -72,11 +72,12 @@ function buttonPressed (key, arr, word) {
 
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
 function wrongLetterSelected (key) {
-    wrongAnswerCounter += 1;
     if (wrongAnswerCounter < 7) {
         document.getElementById(key).style.backgroundColor = "#f81307";
+        wrongAnswerCounter += 1;
         // new image
-    } else {
+    }
+    if (wrongAnswerCounter == 7) {
         loser();
     }
 }
@@ -100,18 +101,23 @@ function rightLetterSelected (key) {
 function addToPressedKeysArray (key, arr) {
     if (!arr.includes(key)) {
         arr.push(key);
-        console.log(arr);
     }
 }
 
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
     console.log("winner");
+    window.onkeypress = function () {
+        return false;
+    }
 }
     
 // if the counter reaches 7, send message that lets the user play again
 function loser () {
     console.log("loser");
+    window.onkeypress = function () {
+        return false;
+    }
 }
 
 
