@@ -68,9 +68,42 @@ function wrongLetterSelected (key) {
     if (wrongAnswerCounter < 7) {
         document.getElementById(key).style.backgroundColor = "#f81307";
         wrongAnswerCounter += 1;
-        // new image
+        
+        switch (wrongAnswerCounter) {
+            case 1:
+                document.getElementById('full-hangman-start').src = 'assets/images/frame_gain.png';
+    
+                break;
+        
+            case 2:
+                document.getElementById('full-hangman-start').src = 'assets/images/head_gain.png';
+    
+                break;
+        
+            case 3:
+                document.getElementById('full-hangman-start').src = 'assets/images/body_gain.png';
+    
+                break;
+        
+            case 4:
+                document.getElementById('full-hangman-start').src = 'assets/images/left_arm_gain.png';
+
+                break;
+    
+            case 5:
+                document.getElementById('full-hangman-start').src = 'assets/images/right_arm_gain.png';
+    
+                break;
+        
+            case 6:
+                document.getElementById('full-hangman-start').src = 'assets/images/left_leg_gain.png';
+    
+                break;
+    
+        }
     }
     if (wrongAnswerCounter == 7) {
+        document.getElementById('full-hangman-start').src = 'assets/images/full_body.png'; 
         loser();
     }
 }
