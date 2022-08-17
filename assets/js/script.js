@@ -14,6 +14,7 @@ function clickStartButton () {
         if (event.detail) {
             document.getElementById('game-type-buttons').style.visibility = 'hidden';
             document.getElementById('keyboard').style.visibility = 'visible';
+            document.getElementById('full-hangman-start').src = 'assets/images/blank_image.png';
             formatafterStart();
         }
         mouseSelectLetter(word);
