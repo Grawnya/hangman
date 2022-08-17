@@ -3,29 +3,26 @@ document.getElementById('keyboard').style.visibility = 'hidden';
 var wrongAnswerCounter = 0;
 var lettersPressed = [];
 var lettersLeft = 7;
-window.onkeypress = function () {
-    return false;
-}
+blockKeyboard();
 clickStartButton();
 
 var word = randomlySelectWord();
 console.log(word);
 var individualLetters = word.split('');
-keyboardSelectLetter(lettersPressed, word);
-mouseSelectLetter(lettersPressed, word)
 
 function clickStartButton () {
     document.addEventListener('click', function (event) {
         if (event.detail) {
-            window.onkeypress = function () {
-                return false;
-            }
+            unBlockKeyboard();
             document.getElementById('game-type-buttons').style.visibility = 'hidden';
             document.getElementById('keyboard').style.visibility = 'visible';
             navigator.keyboard.unlock();
             formatafterStart();
         };
+        keyboardSelectLetter(lettersPressed, word);
+        mouseSelectLetter(lettersPressed, word);
     })
+    
 }
 
 function formatafterStart () {
@@ -47,6 +44,7 @@ function randomlySelectWord () {
 function keyboardSelectLetter (arr, word) {
     document.addEventListener("keydown", function(event) {
         let keyPressed = event.key;
+        console.log(keyPressed);
         let upperKeyPressed = keyPressed.toUpperCase();
         buttonPressed(upperKeyPressed, arr, word);
     })
@@ -55,8 +53,7 @@ function keyboardSelectLetter (arr, word) {
 function mouseSelectLetter (arr, word) {
     document.addEventListener("click", function(event) {
         let keyClicked = event.path[0].innerText;
-        let upperKeyClicked = keyClicked.toUpperCase();
-        buttonPressed(upperKeyClicked, arr, word);
+        buttonPressed(keyClicked, arr, word);
     })
 }
 
@@ -107,17 +104,14 @@ function addToPressedKeysArray (key, arr) {
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
     console.log("winner");
-    window.onkeypress = function () {
-        return false;
-    }
-}
+    blockKeyboard();
     
+}
+
 // if the counter reaches 7, send message that lets the user play again
 function loser () {
     console.log("loser");
-    window.onkeypress = function () {
-        return false;
-    }
+    blockKeyboard();
 }
 
 
@@ -126,3 +120,29 @@ function playAgain () {
 }
 
 // if time: make light and dark mode
+
+function blockKeyboard () {
+    window.addEventListener('keydown', function (event) {
+
+        // if the keyCode is 13 ( return key was pressed )
+        if (event.keyPressed !== 13) {
+    
+            // prevent default behaviour
+            event.preventDefault();
+    
+            return false;
+        }
+    
+    });
+}
+
+function unBlockKeyboard () {
+    window.addEventListener('keydown', function (event) {
+
+        // if the keyCode is 13 ( return key was pressed )
+        if (event.keyPressed !== 13) {
+           return true;
+        }
+    
+    });
+}
