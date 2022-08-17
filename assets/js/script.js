@@ -3,7 +3,6 @@ document.getElementById('keyboard').style.visibility = 'hidden';
 var wrongAnswerCounter = 0;
 var lettersPressed = [];
 var lettersLeft = 7;
-blockKeyboard();
 clickStartButton();
 
 var word = randomlySelectWord();
@@ -13,7 +12,6 @@ var individualLetters = word.split('');
 function clickStartButton () {
     document.addEventListener('click', function (event) {
         if (event.detail) {
-            unBlockKeyboard();
             document.getElementById('game-type-buttons').style.visibility = 'hidden';
             document.getElementById('keyboard').style.visibility = 'visible';
             navigator.keyboard.unlock();
@@ -52,7 +50,7 @@ function keyboardSelectLetter (arr, word) {
 
 function mouseSelectLetter (arr, word) {
     document.addEventListener("click", function(event) {
-        let keyClicked = event.path[0].innerText;
+        let keyClicked = event.path[0].innerText;   
         buttonPressed(keyClicked, arr, word);
     })
 }
@@ -104,14 +102,12 @@ function addToPressedKeysArray (key, arr) {
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
     console.log("winner");
-    blockKeyboard();
     
 }
 
 // if the counter reaches 7, send message that lets the user play again
 function loser () {
     console.log("loser");
-    blockKeyboard();
 }
 
 
@@ -120,29 +116,3 @@ function playAgain () {
 }
 
 // if time: make light and dark mode
-
-function blockKeyboard () {
-    window.addEventListener('keydown', function (event) {
-
-        // if the keyCode is 13 ( return key was pressed )
-        if (event.keyPressed !== 13) {
-    
-            // prevent default behaviour
-            event.preventDefault();
-    
-            return false;
-        }
-    
-    });
-}
-
-function unBlockKeyboard () {
-    window.addEventListener('keydown', function (event) {
-
-        // if the keyCode is 13 ( return key was pressed )
-        if (event.keyPressed !== 13) {
-           return true;
-        }
-    
-    });
-}
