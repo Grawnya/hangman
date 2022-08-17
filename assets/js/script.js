@@ -14,13 +14,11 @@ function clickStartButton () {
         if (event.detail) {
             document.getElementById('game-type-buttons').style.visibility = 'hidden';
             document.getElementById('keyboard').style.visibility = 'visible';
-            navigator.keyboard.unlock();
             formatafterStart();
-        };
-        keyboardSelectLetter(lettersPressed, word);
-        mouseSelectLetter(lettersPressed, word);
+        }
+        mouseSelectLetter(word);
+        keyboardSelectLetter(word);
     })
-    
 }
 
 function formatafterStart () {
@@ -38,31 +36,30 @@ function randomlySelectWord () {
     return wordToGuess.toUpperCase();
 }
 
-// also check if already selected, then counter is not changed - continue every time
-function keyboardSelectLetter (arr, word) {
+function keyboardSelectLetter (word) {
     document.addEventListener("keydown", function(event) {
         let keyPressed = event.key;
-        console.log(keyPressed);
         let upperKeyPressed = keyPressed.toUpperCase();
-        buttonPressed(upperKeyPressed, arr, word);
-    })
+        buttonPressed(upperKeyPressed, word);
+    });
 }
 
-function mouseSelectLetter (arr, word) {
+function mouseSelectLetter (word) {
     document.addEventListener("click", function(event) {
-        let keyClicked = event.path[0].innerText;   
-        buttonPressed(keyClicked, arr, word);
-    })
+        let keyClicked = event.path[0].innerText;
+        let upperKeyClicked = keyClicked.toUpperCase();
+        buttonPressed(upperKeyClicked, word);
+    });
 }
 
 // Let the user both click/select the button on the screen and press the key
-function buttonPressed (key, arr, word) {
-    if (!arr.includes(key) && word.indexOf(key) > -1) {
+function buttonPressed (key, word) {
+    if (!lettersPressed.includes(key) && word.indexOf(key) > -1) {
         rightLetterSelected(key);
-    } else if (!arr.includes(key) && !word.indexOf(key) > -1) {
+    } else if (!lettersPressed.includes(key)) {
         wrongLetterSelected(key);
     } 
-    addToPressedKeysArray(key, arr);
+    addToPressedKeysArray(key);
 }
 
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
@@ -84,7 +81,7 @@ function rightLetterSelected (key) {
     let suitableGap = document.getElementsByClassName("word-letter");
     for (let i = 0; i < individualLetters.length; i ++) {
         if (key == individualLetters[i] && lettersLeft != 0 && !lettersPressed.includes(key)) {
-            suitableGap[i].innerText = individualLetters[i];
+            suitableGap[i].innerText = key;
             lettersLeft -= 1;
         } 
         if (lettersLeft == 0) {
@@ -93,16 +90,16 @@ function rightLetterSelected (key) {
     }
 }
 
-function addToPressedKeysArray (key, arr) {
-    if (!arr.includes(key)) {
-        arr.push(key);
+function addToPressedKeysArray (key) {
+    if (!lettersPressed.includes(key)) {
+        lettersPressed.push(key);
     }
 }
 
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
     console.log("winner");
-    
+        
 }
 
 // if the counter reaches 7, send message that lets the user play again
