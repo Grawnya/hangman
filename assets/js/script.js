@@ -3,14 +3,15 @@ document.getElementById('keyboard').style.visibility = 'hidden';
 var wrongAnswerCounter = 0;
 var lettersPressed = [];
 var lettersLeft = 7;
-clickStartButton();
+var startButton = document.getElementById('game-type-buttons');
+clickStartButton(startButton);
 
 var word = randomlySelectWord();
 console.log(word);
 var individualLetters = word.split('');
 
-function clickStartButton () {
-    document.addEventListener('click', function (event) {
+function clickStartButton (button) {
+    button.addEventListener('click', function (event) {
         if (event.detail) {
             document.getElementById('game-type-buttons').style.visibility = 'hidden';
             document.getElementById('keyboard').style.visibility = 'visible';
@@ -47,7 +48,7 @@ function keyboardSelectLetter (word) {
 
 function mouseSelectLetter (word) {
     document.addEventListener("click", function(event) {
-        let keyClicked = event.path[0].innerText;
+        let keyClicked = event.target.innerText;
         let upperKeyClicked = keyClicked.toUpperCase();
         buttonPressed(upperKeyClicked, word);
     });
@@ -57,10 +58,13 @@ function mouseSelectLetter (word) {
 function buttonPressed (key, word) {
     if (!lettersPressed.includes(key) && word.indexOf(key) > -1) {
         rightLetterSelected(key);
+        lettersPressed.push(key);
     } else if (!lettersPressed.includes(key)) {
         wrongLetterSelected(key);
+        lettersPressed.push(key);
     } 
-    addToPressedKeysArray(key);
+    console.log(lettersPressed);
+    // addToPressedKeysArray(key);
 }
 
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
