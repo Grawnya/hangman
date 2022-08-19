@@ -135,22 +135,24 @@ function addToPressedKeysArray (key) {
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
     console.log("winner");
-    // document.getElementById("modal-box-win").style.display = "block";
-    // var usernameValue = document.getElementById("name-input").value;
-    // scoreTrack.push({user: usernameValue, wrongAnswers: wrongAnswerCounter});
-    // scoreTrack.sort(function (a, b) {return a.wrongAnswers - b.wrongAnswers});
-    document.getElementById("leaderboard").style.display = "block";
-    var table = document.getElementById("leaderboard-table");
-    for (let i = 0; i < 5; i++) {
-        if (i < scoreTrack.length) {
-            var row = table.insertRow(i);
-            var usernameTableValue = row.insertCell(0);
-            usernameTableValue.innerText = scoreTrack[i].user;
-            var wrongAnswerTableValue = row.insertCell(1);
-            wrongAnswerTableValue.innerText = scoreTrack[i].wrongAnswers;
-        }
-    }
-    // document.getElementById("modal-submit-username").addEventListener("click", function (event) {
+    document.getElementById("modal-box-win").style.display = "block";
+    document.getElementById("modal-submit-username").addEventListener("click", function (event) {
+        var usernameValue = document.getElementById("name-input").value;
+        scoreTrack.push({user: usernameValue, wrongAnswers: wrongAnswerCounter});
+        scoreTrack.sort(function (a, b) {return a.wrongAnswers - b.wrongAnswers});
+        console.log(scoreTrack);
+    // document.getElementById("leaderboard").style.display = "block";
+    // var table = document.getElementById("leaderboard-table");
+    // for (let i = 0; i < 5; i++) {
+    //     if (i < scoreTrack.length) {
+    //         var row = table.insertRow(i);
+    //         var usernameTableValue = row.insertCell(0);
+    //         usernameTableValue.innerText = scoreTrack[i].user;
+    //         var wrongAnswerTableValue = row.insertCell(1);
+    //         wrongAnswerTableValue.innerText = scoreTrack[i].wrongAnswers;
+    //     }
+    // }
+    
         // var playAgainButton = document.getElementById("leaderboard").createElement("BUTTON");
         // playAgainButton.classList.add("submit-button");
         // document.getElementById("modal-box-win").style.display = "none";
@@ -158,7 +160,7 @@ function winner () {
         // playAgainButton.addEventListener(function () {
         //     playAgain();
         // })
-    // })
+    })
     
 }
 
