@@ -134,7 +134,7 @@ function addToPressedKeysArray (key) {
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
     console.log("winner");
-    // modal box asking for username
+    document.getElementById("modal").style.display= "block";
     // and show leaderboard with least wrong guesses 
     console.log(wrongAnswerCounter);
 }
