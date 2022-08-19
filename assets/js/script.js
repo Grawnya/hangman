@@ -134,13 +134,38 @@ function addToPressedKeysArray (key) {
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
     console.log("winner");
-    document.getElementById("modal").style.display= "block";
+    document.getElementById("modal-box-win").style.display = "block";
     document.getElementById("modal-submit-username").addEventListener("click", function (event) {
         var usernameValue = document.getElementById("name-input").value;
-        scoreTrack.push([usernameValue, wrongAnswerCounter]);
+        scoreTrack.push({user: usernameValue, wrongAnswers: wrongAnswerCounter});
+        scoreTrack.sort(function (a, b) {return a.wrongAnswers - b.wrongAnswers});
+        var table = document.getElementById("leaderboard").createElement("TABLE");
+        var caption = table.createCaption();
+        caption.innerHTML = "<b>Leaderboard</b>"
+        var header = table.createTHead();
+        var rowForHeaders = header.insertRow(0);
+        var firstHeader = rowForHeaders.insertCell(0);
+        firstHeader.innerHTML = "<em>Username</em>"
+        var secondHeader = rowForHeaders.insertCell(1);
+        secondHeader.innerHTML = "<em>No. of Wrong Answers</em>"
+        for (let i = 0; i < 5; i++) {
+            if (i < scoreTrack.length) {
+                var row = table.insertRow(i);
+                var usernameTableValue = row.insertCell(0);
+                usernameTableValue.innerText = scoreTrack[i].user;
+                var wrongAnswerTableValue = row.insertCell(1);
+                wrongAnswerTableValue.innerText = scoreTrack[i].wrongAnswers;
+            }
+        }
+        var playAgainButton = document.getElementById("leaderboard").createElement("BUTTON");
+        playAgainButton.classList.add("submit-button");
+        document.getElementById("modal-box-win").style.display = "none";
+        document.getElementById("leaderboard").style.display = "block";
+        playAgainButton.addEventListener(function () {
+            playAgain();
+        })
     })
-    // and show leaderboard with least wrong guesses 
-    console.log(wrongAnswerCounter);
+    
 }
 
 // if the counter reaches 7, send message that lets the user play again
@@ -150,7 +175,15 @@ function loser () {
 
 
 function playAgain () {
+    document.getElementById('keyboard').style.visibility = 'hidden';
+    document.getElementById('game-type-buttons').style.visibility = 'visible';
+    wrongAnswerCounter = 0;
+    lettersPressed = [];
+    lettersLeft = 7;
+    clickStartButton();
 
+    word = randomlySelectWord();
+    individualLetters = word.split('');
 }
 
 // if time: make light and dark mode
