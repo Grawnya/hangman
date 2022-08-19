@@ -3,15 +3,13 @@ document.getElementById('keyboard').style.visibility = 'hidden';
 var wrongAnswerCounter = 0;
 var lettersPressed = [];
 var lettersLeft = 7;
-var startButton = document.getElementById('game-type-buttons');
-clickStartButton(startButton);
+clickStartButton();
 
 var word = randomlySelectWord();
-console.log(word);
 var individualLetters = word.split('');
 
-function clickStartButton (button) {
-    button.addEventListener('click', function (event) {
+function clickStartButton () {
+    document.getElementById('game-type-buttons').addEventListener('click', function (event) {
         if (event.detail) {
             document.getElementById('game-type-buttons').style.visibility = 'hidden';
             document.getElementById('keyboard').style.visibility = 'visible';
@@ -35,6 +33,7 @@ function formatafterStart () {
 function randomlySelectWord () {
     var indexOfWordToGuess = Math.floor(Math.random() * WORDS.length);
     var wordToGuess = WORDS[indexOfWordToGuess];
+    console.log(wordToGuess.toUpperCase());
     return wordToGuess.toUpperCase();
 }
 
@@ -58,13 +57,10 @@ function mouseSelectLetter (word) {
 function buttonPressed (key, word) {
     if (!lettersPressed.includes(key) && word.indexOf(key) > -1) {
         rightLetterSelected(key);
-        lettersPressed.push(key);
     } else if (!lettersPressed.includes(key)) {
         wrongLetterSelected(key);
-        lettersPressed.push(key);
     } 
-    console.log(lettersPressed);
-    // addToPressedKeysArray(key);
+    addToPressedKeysArray(key);
 }
 
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
@@ -137,7 +133,9 @@ function addToPressedKeysArray (key) {
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
     console.log("winner");
-        
+    // modal box asking for username
+    // then show leaderboard with least wrong guesses 
+    console.log(wrongAnswerCounter);
 }
 
 // if the counter reaches 7, send message that lets the user play again
