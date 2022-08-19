@@ -141,7 +141,9 @@ function winner () {
         scoreTrack.push({user: usernameValue, wrongAnswers: wrongAnswerCounter});
         scoreTrack.sort(function (a, b) {return a.wrongAnswers - b.wrongAnswers});
         console.log(scoreTrack);
-    // document.getElementById("leaderboard").style.display = "block";
+        document.getElementById("modal-box-win").style.display = "hidden";
+        document.getElementById("leaderboard").style.display = "block";
+        event.preventDefault();
     // var table = document.getElementById("leaderboard-table");
     // for (let i = 0; i < 5; i++) {
     //     if (i < scoreTrack.length) {
