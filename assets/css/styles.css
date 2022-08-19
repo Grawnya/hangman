@@ -106,7 +106,7 @@ h1 {
 }
 
 /* The Modal*/
-#modal {
+.modal {
     display: none;
     position: absolute;
     left: 50%;
