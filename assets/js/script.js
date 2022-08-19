@@ -1,5 +1,6 @@
 import { WORDS } from "./words.js";
 document.getElementById('keyboard').style.visibility = 'hidden';
+document.getElementById('leaderboard').style.visibility = 'hidden';
 var wrongAnswerCounter = 0;
 var lettersPressed = [];
 var lettersLeft = 7;
@@ -134,10 +135,11 @@ function addToPressedKeysArray (key) {
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
     console.log("winner");
-    document.getElementById("modal-box-win").style.display = "block";
-    var usernameValue = document.getElementById("name-input").value;
-    scoreTrack.push({user: usernameValue, wrongAnswers: wrongAnswerCounter});
-    scoreTrack.sort(function (a, b) {return a.wrongAnswers - b.wrongAnswers});
+    // document.getElementById("modal-box-win").style.display = "block";
+    // var usernameValue = document.getElementById("name-input").value;
+    // scoreTrack.push({user: usernameValue, wrongAnswers: wrongAnswerCounter});
+    // scoreTrack.sort(function (a, b) {return a.wrongAnswers - b.wrongAnswers});
+    document.getElementById("leaderboard").style.display = "block";
     var table = document.getElementById("leaderboard-table");
     for (let i = 0; i < 5; i++) {
         if (i < scoreTrack.length) {

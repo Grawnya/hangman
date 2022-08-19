@@ -69,8 +69,8 @@
         </div>
     </section>
     <!-- Modal Box-->
-    <section class="modal" id="modal-box-win">
-        <form action="#" method="get">
+    <section id="modal-box-win" class="modal">
+        <form action="" method="get">
             <fieldset>
                 <div class="modal-content">
                     <h2 class="modal-message">Congrats you Won! Enter your Username Below for the Leaderboard</h2>
@@ -82,20 +82,25 @@
         </form>
     </section>
     <!-- Leaderboard Box -->
-    <section id="leaderboard">
-        <table id="leaderboard-table">
+    <section id="leaderboard" class="modal">
+        <table id="leaderboard-table" class="modal-content">
             <caption>
-                <b>Leaderboard</b>
+                <b class="table-font">Leaderboard</b>
             </caption>
             <tr>
                 <th>
-                    <em>Username</em>
+                    <em class="table-font">Username</em>
                 </th>
                 <th>
-                    <em>No. of Wrong Answers</em>
+                    <em class="table-font">No. of Wrong Answers</em>
                 </th>
             </tr>
+            <tr>
+                <td>test1</td>
+                <td>test2</td>
+            </tr>
         </table>
+        <input class="submit-button" id="play-again-button" name="play-again" value="Play Again" type="submit">
     </section>
 
     <!-- JavaScript file -->
