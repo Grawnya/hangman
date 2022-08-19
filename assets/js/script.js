@@ -3,6 +3,7 @@ document.getElementById('keyboard').style.visibility = 'hidden';
 var wrongAnswerCounter = 0;
 var lettersPressed = [];
 var lettersLeft = 7;
+var scoreTrack = {};
 clickStartButton();
 
 var word = randomlySelectWord();
@@ -134,7 +135,7 @@ function addToPressedKeysArray (key) {
 function winner () {
     console.log("winner");
     // modal box asking for username
-    // then show leaderboard with least wrong guesses 
+    // and show leaderboard with least wrong guesses 
     console.log(wrongAnswerCounter);
 }
 
