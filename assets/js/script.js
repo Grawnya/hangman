@@ -101,7 +101,6 @@ function wrongLetterSelected (key) {
                 document.getElementById('full-hangman-start').src = 'assets/images/left_leg_gain.png';
     
                 break;
-    
         }
     }
     if (wrongAnswerCounter == 7) {
@@ -116,13 +115,13 @@ function rightLetterSelected (key) {
     document.getElementById(key).style.backgroundColor = "#0ff04d";
     let suitableGap = document.getElementsByClassName("word-letter");
     for (let i = 0; i < individualLetters.length; i ++) {
-        if (key == individualLetters[i] && lettersLeft != 0 && !lettersPressed.includes(key)) {
+        if (key == individualLetters[i] && lettersLeft != 0) {
             suitableGap[i].innerText = key;
             lettersLeft -= 1;
         } 
-        if (lettersLeft == 0) {
-            winner();
-        }
+    }
+    if (lettersLeft == 0) {
+        winner();
     }
 }
 
@@ -171,7 +170,6 @@ function loser () {
     console.log("loser");
     document.getElementById("modal-box-win").style.display = "none";
     document.getElementById("leaderboard").style.display = "block";
-    document.getElementById("leaderboard").style.visibility = "visible";
     document.getElementById("leaderboard").style.zIndex = "3";
     document.getElementById("leaderboard-caption").innerText = "You Lost";
     document.getElementById("play-again-button").addEventListener("clicks", function () {
@@ -184,16 +182,15 @@ function playAgain () {
     resetScreen();
     word = randomlySelectWord();
     individualLetters = word.split('');
-    console.log(individualLetters);
     clickStartButton();
 }
 
 function resetScreen() {
     wrongAnswerCounter = 0;
-    lettersPressed.length = 0;
+    lettersPressed = [];
     lettersLeft = 7;
     word = "";
-    individualLetters.length = 0; 
+    individualLetters = []; 
     var hangman = "HANGMAN";
     var resetStartLettersNodeList = document.querySelectorAll('.word-letter');
     for (let j = 0; j < resetStartLettersNodeList.length; j++) {
