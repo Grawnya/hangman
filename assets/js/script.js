@@ -1,6 +1,5 @@
 import { WORDS } from "./words.js";
 document.getElementById('keyboard').style.visibility = 'hidden';
-document.getElementById('leaderboard').style.visibility = 'hidden';
 var wrongAnswerCounter = 0;
 var lettersPressed = [];
 var lettersLeft = 7;
@@ -13,14 +12,14 @@ var individualLetters = word.split('');
 function clickStartButton () {
     document.getElementById('game-type-buttons').addEventListener('click', function (event) {
         if (event.detail) {
+            formatafterStart();
             document.getElementById('game-type-buttons').style.visibility = 'hidden';
             document.getElementById('keyboard').style.visibility = 'visible';
             document.getElementById('full-hangman-start').src = 'assets/images/blank_image.png';
-            formatafterStart();
         }
         mouseSelectLetter(word);
         keyboardSelectLetter(word);
-    })
+    });
 }
 
 function formatafterStart () {
@@ -141,10 +140,12 @@ function winner () {
     document.getElementById("modal-submit-username").addEventListener("click", function (event) {
         var usernameValue = document.getElementById("name-input").value;
         scoreTrack.push({user: usernameValue, wrongAnswers: answersWrong});
-        scoreTrack.sort(function (a, b) {return a.wrongAnswers - b.wrongAnswers});
+        scoreTrack.sort(function (a, b) {
+            return a.wrongAnswers - b.wrongAnswers;
+        });
         console.log(scoreTrack);
         var table = document.getElementById("leaderboard-table");
-        document.getElementById("leaderboard-caption").innerText = "You Won"
+        document.getElementById("leaderboard-caption").innerText = "You Won";
         for (let i = 0; i < 5; i++) {
             if (i < scoreTrack.length) {
                 var row = table.insertRow(i+1);
@@ -161,38 +162,50 @@ function winner () {
         event.preventDefault();
         document.getElementById("play-again-button").addEventListener("click", function () {
             playAgain();
-        })
-    })
-    
+        });
+    });
 }
 
 // if the counter reaches 7, send message that lets the user play again
 function loser () {
     console.log("loser");
-
     document.getElementById("modal-box-win").style.display = "none";
     document.getElementById("leaderboard").style.display = "block";
     document.getElementById("leaderboard").style.visibility = "visible";
     document.getElementById("leaderboard").style.zIndex = "3";
-    event.preventDefault();
-    document.getElementById("play-again-button").addEventListener(function () {
+    document.getElementById("leaderboard-caption").innerText = "You Lost";
+    document.getElementById("play-again-button").addEventListener("clicks", function () {
         playAgain();
-    })
+    });
 }
 
 
 function playAgain () {
+    resetScreen();
+    word = randomlySelectWord();
+    individualLetters = word.split('');
+    console.log(individualLetters);
+    clickStartButton();
+}
+
+function resetScreen() {
+    wrongAnswerCounter = 0;
+    lettersPressed.length = 0;
+    lettersLeft = 7;
+    word = "";
+    individualLetters.length = 0; 
+    var hangman = "HANGMAN";
+    var resetStartLettersNodeList = document.querySelectorAll('.word-letter');
+    for (let j = 0; j < resetStartLettersNodeList.length; j++) {
+        resetStartLettersNodeList[j].innerHTML = hangman[j];
+    }
     document.getElementById('keyboard').style.visibility = 'hidden';
     document.getElementById('game-type-buttons').style.visibility = 'visible';
     document.getElementById("leaderboard").style.display = "none";
-    document.getElementById("leaderboard").style.visibility = "hidden";
-    wrongAnswerCounter = 0;
-    lettersPressed = [];
-    lettersLeft = 7;
-    clickStartButton();
-
-    word = randomlySelectWord();
-    individualLetters = word.split('');
+    var keyboardKeys = document.getElementsByClassName("keyboard-button");
+    for (let i = 0; i < keyboardKeys.length; i++) {
+        keyboardKeys[i].style.backgroundColor = "#ffffff";
+    }
 }
 
 // if time: make light and dark mode
