@@ -6,13 +6,15 @@ var lettersLeft = 7;
 var scoreTrack = [];
 clickStartButton();
 
-var word = randomlySelectWord();
-var individualLetters = word.split('');
+var word = "";
+var individualLetters = [];
 
 function clickStartButton () {
     document.getElementById('game-type-buttons').addEventListener('click', function (event) {
         if (event.detail) {
             formatafterStart();
+            word = randomlySelectWord();
+            individualLetters = word.split('');
             document.getElementById('game-type-buttons').style.visibility = 'hidden';
             document.getElementById('keyboard').style.visibility = 'visible';
             document.getElementById('full-hangman-start').src = 'assets/images/blank_image.png';
@@ -138,11 +140,13 @@ function winner () {
     document.getElementById("modal-box-win").style.display = "block";
     document.getElementById("modal-submit-username").addEventListener("click", function (event) {
         var usernameValue = document.getElementById("name-input").value;
-        scoreTrack.push({user: usernameValue, wrongAnswers: answersWrong});
-        scoreTrack.sort(function (a, b) {
-            return a.wrongAnswers - b.wrongAnswers;
-        });
-        console.log(scoreTrack);
+        const checkUsernameExists = obj => obj.user === usernameValue;
+        if(!checkUsernameExists) {
+            scoreTrack.push({user: usernameValue, wrongAnswers: answersWrong});
+            scoreTrack.sort(function (a, b) {
+                return a.wrongAnswers - b.wrongAnswers;
+            });
+        }
         var table = document.getElementById("leaderboard-table");
         document.getElementById("leaderboard-caption").innerText = "You Won";
         for (let i = 0; i < 5; i++) {
@@ -180,8 +184,6 @@ function loser () {
 
 function playAgain () {
     resetScreen();
-    word = randomlySelectWord();
-    individualLetters = word.split('');
     clickStartButton();
 }
 
