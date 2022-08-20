@@ -59,10 +59,11 @@ function mouseSelectLetter (word) {
 function buttonPressed (key, word) {
     if (!lettersPressed.includes(key) && word.indexOf(key) > -1) {
         rightLetterSelected(key);
+        addToPressedKeysArray(key);
     } else if (!lettersPressed.includes(key)) {
         wrongLetterSelected(key);
-    } 
-    addToPressedKeysArray(key);
+        addToPressedKeysArray(key);
+    }
 }
 
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
@@ -135,33 +136,32 @@ function addToPressedKeysArray (key) {
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
     console.log("winner");
+    var answersWrong = wrongAnswerCounter;
     document.getElementById("modal-box-win").style.display = "block";
     document.getElementById("modal-submit-username").addEventListener("click", function (event) {
         var usernameValue = document.getElementById("name-input").value;
-        scoreTrack.push({user: usernameValue, wrongAnswers: wrongAnswerCounter});
+        scoreTrack.push({user: usernameValue, wrongAnswers: answersWrong});
         scoreTrack.sort(function (a, b) {return a.wrongAnswers - b.wrongAnswers});
         console.log(scoreTrack);
-        document.getElementById("modal-box-win").style.display = "hidden";
+        var table = document.getElementById("leaderboard-table");
+        document.getElementById("leaderboard-caption").innerText = "You Won"
+        for (let i = 0; i < 5; i++) {
+            if (i < scoreTrack.length) {
+                var row = table.insertRow(i+1);
+                var usernameTableValue = row.insertCell(0);
+                usernameTableValue.innerText = scoreTrack[i].user;
+                var wrongAnswerTableValue = row.insertCell(1);
+                wrongAnswerTableValue.innerText = scoreTrack[i].wrongAnswers;
+            }
+        }
+        document.getElementById("modal-box-win").style.display = "none";
         document.getElementById("leaderboard").style.display = "block";
+        document.getElementById("leaderboard").style.visibility = "visible";
+        document.getElementById("leaderboard").style.zIndex = "3";
         event.preventDefault();
-    // var table = document.getElementById("leaderboard-table");
-    // for (let i = 0; i < 5; i++) {
-    //     if (i < scoreTrack.length) {
-    //         var row = table.insertRow(i);
-    //         var usernameTableValue = row.insertCell(0);
-    //         usernameTableValue.innerText = scoreTrack[i].user;
-    //         var wrongAnswerTableValue = row.insertCell(1);
-    //         wrongAnswerTableValue.innerText = scoreTrack[i].wrongAnswers;
-    //     }
-    // }
-    
-        // var playAgainButton = document.getElementById("leaderboard").createElement("BUTTON");
-        // playAgainButton.classList.add("submit-button");
-        // document.getElementById("modal-box-win").style.display = "none";
-        // document.getElementById("leaderboard").style.display = "block";
-        // playAgainButton.addEventListener(function () {
-        //     playAgain();
-        // })
+        document.getElementById("play-again-button").addEventListener("click", function () {
+            playAgain();
+        })
     })
     
 }
@@ -169,12 +169,23 @@ function winner () {
 // if the counter reaches 7, send message that lets the user play again
 function loser () {
     console.log("loser");
+
+    document.getElementById("modal-box-win").style.display = "none";
+    document.getElementById("leaderboard").style.display = "block";
+    document.getElementById("leaderboard").style.visibility = "visible";
+    document.getElementById("leaderboard").style.zIndex = "3";
+    event.preventDefault();
+    document.getElementById("play-again-button").addEventListener(function () {
+        playAgain();
+    })
 }
 
 
 function playAgain () {
     document.getElementById('keyboard').style.visibility = 'hidden';
     document.getElementById('game-type-buttons').style.visibility = 'visible';
+    document.getElementById("leaderboard").style.display = "none";
+    document.getElementById("leaderboard").style.visibility = "hidden";
     wrongAnswerCounter = 0;
     lettersPressed = [];
     lettersLeft = 7;
