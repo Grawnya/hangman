@@ -13,11 +13,11 @@ function clickStartButton () {
     document.getElementById('game-type-buttons').addEventListener('click', function (event) {
         if (event.detail) {
             formatafterStart();
-            word = randomlySelectWord();
-            individualLetters = word.split('');
             document.getElementById('game-type-buttons').style.visibility = 'hidden';
             document.getElementById('keyboard').style.visibility = 'visible';
             document.getElementById('full-hangman-start').src = 'assets/images/blank_image.png';
+            word = randomlySelectWord();
+            individualLetters = word.split('');
         }
         mouseSelectLetter(word);
         keyboardSelectLetter(word);
@@ -58,6 +58,11 @@ function mouseSelectLetter (word) {
 
 // Let the user both click/select the button on the screen and press the key
 function buttonPressed (key, word) {
+    console.log(individualLetters);
+    console.log(key);
+    console.log(word);
+    console.log(word.indexOf(key));
+    console.log(word.indexOf(key) > -1);
     if (!lettersPressed.includes(key) && word.indexOf(key) > -1) {
         rightLetterSelected(key);
         addToPressedKeysArray(key);
@@ -66,7 +71,6 @@ function buttonPressed (key, word) {
         addToPressedKeysArray(key);
     }
 }
-
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
 function wrongLetterSelected (key) {
     if (wrongAnswerCounter < 7) {
@@ -123,6 +127,7 @@ function rightLetterSelected (key) {
         } 
     }
     if (lettersLeft == 0) {
+
         winner();
     }
 }
@@ -135,12 +140,13 @@ function addToPressedKeysArray (key) {
 
 // if the word is obtained, send message to say well done with a leaderboard and play again
 function winner () {
+    lettersLeft = 1000;
     console.log("winner");
     var answersWrong = wrongAnswerCounter;
     document.getElementById("modal-box-win").style.display = "block";
     document.getElementById("modal-submit-username").addEventListener("click", function (event) {
         var usernameValue = document.getElementById("name-input").value;
-        const checkUsernameExists = obj => obj.user === usernameValue;
+        const checkUsernameExists = scoreTrack.some(obj => obj.user === usernameValue);
         if(!checkUsernameExists) {
             scoreTrack.push({user: usernameValue, wrongAnswers: answersWrong});
             scoreTrack.sort(function (a, b) {
@@ -171,28 +177,27 @@ function winner () {
 
 // if the counter reaches 7, send message that lets the user play again
 function loser () {
+    lettersLeft = 1000;
     console.log("loser");
     document.getElementById("modal-box-win").style.display = "none";
     document.getElementById("leaderboard").style.display = "block";
     document.getElementById("leaderboard").style.zIndex = "3";
+    
     document.getElementById("leaderboard-caption").innerText = "You Lost";
-    document.getElementById("play-again-button").addEventListener("clicks", function () {
+    document.getElementById("play-again-button").addEventListener("click", function () {
         playAgain();
     });
 }
 
-
 function playAgain () {
     resetScreen();
+    wrongAnswerCounter = 0;
+    lettersPressed = [];
+    lettersLeft = 7;
     clickStartButton();
 }
 
 function resetScreen() {
-    wrongAnswerCounter = 0;
-    lettersPressed = [];
-    lettersLeft = 7;
-    word = "";
-    individualLetters = []; 
     var hangman = "HANGMAN";
     var resetStartLettersNodeList = document.querySelectorAll('.word-letter');
     for (let j = 0; j < resetStartLettersNodeList.length; j++) {
