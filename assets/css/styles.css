@@ -175,3 +175,9 @@ th, td {
         width: 25%;
     }
 }
+
+@media screen and (min-width:992px) {
+    #full-hangman-start {
+        width: 20%;
+    }
+}
