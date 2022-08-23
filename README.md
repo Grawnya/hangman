@@ -21,6 +21,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
         * [Expectations](#expectations)
     * [Design Choices](#design-choices "Design Choices")
         * [Font](#font "Font")
+        * [Icons](#icons "Icons")
 
 
 
@@ -62,3 +63,6 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
 ## Design Choices
 ### Font
 To deviate from the standard fonts, [Google Fonts](https://fonts.google.com/ "Google Fonts") was used to obtain a font style, which would be reminiscent of a classroom blackboard. [Pangolin]( https://fonts.google.com/specimen/Pangolin?query=pangolin) fulfilled the criteria for the game’s text, as it was easily readable, yet had that nostalgic childhood vibe.
+
+### Icons
+In order to obtain some icons for the website, [Font Awesome](https://fontawesome.com/ "Font Awesome") will be utilised. An icon is only required for the dark/light mode button as the hangman images are all pictures.
