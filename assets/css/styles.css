@@ -18,13 +18,13 @@ body {
     color: var(--white);
 }
 
-/* Heading */
 h1 {
     padding-top: 1rem;
-    font-size: 3.5rem;
+    font-size: 3.25rem;
     height: 10vh;
     text-align: center;
 }
+/* Heading */
 
 #logo {
     padding-right: 1%;
