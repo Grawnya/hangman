@@ -16,6 +16,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
 * [UX](#ux "UX")
     * [User Goals](#user-goals "User Goals")
     * [User Stories](#user-stories "User Stories")
+    * [User Requirements and Expectations](#user-requirements-and-expectations)
 
 # UX
 
@@ -31,3 +32,10 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
 * As a user, I want to know how to play the game.
 * As a user, I want to play a game that is not slow to run.
 * As a user, I want to know if the letter I selected is in the word or not in the game.
+
+## User Requirements and Expectations
+### Requirements
+* Easy to navigate on the different screen sizes – mobile, tablet and larger screens.
+* Present basic introductory sentence to play the game.
+* Let the user know if the letter they select is contained within the word or not.
+* Entice the user to play again with aesthetically pleasing modal boxes.
