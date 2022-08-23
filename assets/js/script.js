@@ -5,7 +5,7 @@ var selectedLetters = [];
 var wrongAnswers = 0;
 var lettersLeft = 7;
 var mode = "dark";
-
+colorMode();
 var word = "";
 var individualLetters = [];
 clickStartButton();
