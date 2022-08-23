@@ -45,8 +45,9 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
             * [First Attempt](#first-attempt-css "First Attempt")
         * [JSHint](#jshint "JSHint")
             * [Final Attempt](#final-attempt-js "Final Attempt")
-
-
+    * [Lighthouse](#lighthouse "Lighthouse")
+        * [Final Attempt](#final-attempt-lighthouse "Final Attempt")
+        
 
 # UX
 
@@ -263,5 +264,20 @@ The primary JavaScript document `script.js` was often run through [JSHint](https
 No issues arose. 
 
 ![W3C CSS Validator Test Result](documentation/js_hint_validation.png)
+\
+&nbsp;
+
+## Lighthouse 
+In order to verify the suitability of the webpage, [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en "Lighthouse"), a tool found in Chrome Developer Tools was used to check a broad variety. This includes:
+
+* Performance – Based on how fast the website loads and contributes to the overall UX.
+* Accessibility – Based on how easy it is to use the website regardless if people might use a screen reader, etc.
+* Best Practices – Based on the best practices used in industry.
+* SEO - Search Engine Optimisation – If the website is optimised to be easily discoverable on a search engine.
+
+### Final Attempt (Lighthouse)
+After completing the project, Lighthouse was used to check the suitability on both the desktop and the mobile version of the game. The following result was obtained for the mobile version of the game, whereas the desktop version earned 100 in all 4 categories.
+
+![Lighthouse Final Attempt](documentation/lighthouse-mobile.png)
 \
 &nbsp;
