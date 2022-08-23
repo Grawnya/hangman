@@ -56,16 +56,18 @@ function colorMode() {
     });
 }
 
+// pick word
+function pickWord() {
+    var indexOfWordToGuess = Math.floor(Math.random() * WORDS.length);
+    var wordToGuess = WORDS[indexOfWordToGuess];
+    return wordToGuess.toUpperCase();
+}
+
+// format the start of the game when the start button has been clicked
 function startGame () {
+    word = pickWord();
+    individualLetters = word.split("");
     document.getElementById('game-type-buttons').addEventListener('click', function (event) {
-        if (event.detail) {
-            formatafterStart();
-            document.getElementById('game-type-buttons').style.visibility = 'hidden';
-            document.getElementById('keyboard').style.visibility = 'visible';
-            document.getElementById('full-hangman-start').src = 'assets/images/blank_image.png';
-            word = randomlySelectWord();
-            individualLetters = word.split('');
-        }
         mouseSelectLetter(word);
         keyboardSelectLetter(word);
     });
@@ -78,13 +80,6 @@ function formatafterStart () {
     startLettersNodeList.forEach(function (item) {
         item.innerText = "_";
     });
-}
-
-// pick word
-function pickWord() {
-    var indexOfWordToGuess = Math.floor(Math.random() * WORDS.length);
-    var wordToGuess = WORDS[indexOfWordToGuess];
-    return wordToGuess.toUpperCase();
 }
 
 function keyboardSelectLetter (word) {
