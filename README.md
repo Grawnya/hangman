@@ -25,6 +25,9 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
         * [Colours](#colours "Colours")
         * [Structure](#structure "Structure")
 * [Wireframes](#wireframes "Wireframes")
+* [Features](#features "Features")
+    * [Existing Features](#existing-features "Existing Features")
+    * [Home Page](#home-page "Home Page")
 
 
 # UX
@@ -72,7 +75,7 @@ In order to obtain some icons for the website, [Font Awesome](https://fontawesom
 ### Colours
 To select the colour palette for the project, was inspired by a traditional blackboard for the dark mode, and by a whiteboard for the light mode. For dark mode, when checking the contrast of the colours on [Web AIM](https://webaim.org/resources/contrastchecker/ "Web AIM"), the dark green with the white passed. For the light mode, the dark blue with the white also passed. Therefore, the following colours were selected for the project:
 
-![Colour Palette](documentation/final-color-pallette.jpg)
+![Colour Palette](documentation/final-color-pallette.png)
 
 Where:
 *  #033e05 (also known as --dark green) is used for the background of the game in dark mode, as well as the font and the button background colour of the modal boxes.
@@ -111,5 +114,21 @@ Basic wireframes can be found below:
 \
 &nbsp;
 [Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Features
+
+## Existing Features
+### Home Page
+The home page consists of a basic and enticing central hangman image, reminiscent of school days, to lure the user in. The colour scheme reinforces this. The title at the top of the page highlights that the game being played will be hangman. 
+
+The start button’s large design entices the user to click on the button. Below the centrally located start button, the user can find a brief introduction into how the game will function.
+
+This can be seen in the screenshot below:
+
+![Home Page](documentation/home-page-mobile.png)
+
+The larger screen sizes include room either side of the game so the image maintains its aspect ratio and the game is not stretched out. 
 \
 &nbsp;
