@@ -48,6 +48,9 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
     * [Lighthouse](#lighthouse "Lighthouse")
         * [Final Attempt](#final-attempt-lighthouse "Final Attempt")
     * [Responsiveness](#responsiveness "Responsiveness")
+    * [Web Aim Contrast Checker](#web-aim-contrast-checker "Web Aim Contrast Checker")
+    * [Browser Compatibility](#browser-compatibility "Browser Compatibility")
+
 
 # UX
 
@@ -297,5 +300,30 @@ I also opted to use the responsiveness option and checked the screens at the fol
 * 992px
 
 No issues arose, due to the responsive design of the website with rem and % values.
+\
+&nbsp;
+
+
+## Web Aim Contrast Checker
+The [Web AIM](https://webaim.org/resources/contrastchecker/ "Web AIM") was used, as described in the [Colours](#colours "Colours") section.
+
+For the dark mode, the contrast check between the dark green background with the white passed, as it met the contrast ratio criteria of 7+, as seen below:
+
+![Web Aim Contrast Result for Dark Mode](documentation/dark-mode-contrast.png)
+
+For the light mode, the contrast check between the white background with the dark blue passed, as it met the contrast ratio criteria of 7+, as seen below:
+
+![Web Aim Contrast Result for Light Mode](documentation/light-mode-contrast.png)
+\
+&nbsp;
+
+## Browser Compatibility
+The website was tested on a variety of browsers to ensure that it was fully functional. 
+
+On desktop, Google Chrome, Mozilla Firefox and Microsoft Edge were utilised. 
+
+On mobile, Google Chrome was utilised.
+
+The responsiveness and the appearance remained relatively the same across the various devices and browsers.
 \
 &nbsp;
