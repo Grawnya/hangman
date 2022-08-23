@@ -231,7 +231,14 @@ function playAgain () {
     wrongAnswerToPrint = "Wrong: ";
     document.getElementById("printing-wrong-letters").innerText = wrongAnswerToPrint;
     document.getElementById("wrong-answers-printed").style.visibility = 'visible';
-    
+    var keyboardKeys = document.getElementsByClassName("keyboard-button");
+    for (let i = 0; i < keyboardKeys.length; i++) {
+        if (mode === "dark") {
+            keyboardKeys[i].style.backgroundColor = "#ffffff";
+        } else if (mode === "light") {
+            keyboardKeys[i].style.backgroundColor = "#1d4999";
+        }
+    }
     clickStartButton();
 }
 
