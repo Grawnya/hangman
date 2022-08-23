@@ -32,6 +32,10 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
         * [Game Winner Modal Boxes](#game-winner-modal-boxes "Game Winner Modal Boxes")
         * [Game Loser Modal Boxes](#game-loser-modal-boxes "Game Loser Modal Boxes")
         * [Light Mode](#light-mode "Light Mode")
+    * [Features to be Implemented](#features-to-be-implemented "Features to be Implemented")
+* [Technologies Used](#technologies-used "Technologies Used")
+    * [Languages](#languages "Languages")
+    * [Tools](#tools "Tools")
 
 
 # UX
@@ -179,23 +183,36 @@ The user can swap back to dark mode by just clicking on the icon again. As the u
 \
 &nbsp;
 
-
-### Game Loser Modal Box
-If the user is unsuccessful, only a single modal box appears. Letting the user know what the correct word was and prompting them to play again:
-
-![Losing Message](documentation/lose-modal-1.png)
-
-If the user opts to select the play again button, like the [Game Winner Modal Boxes](#game-winner-modal-boxes "Game Winner Modal Boxes"), the user will be redirected to the game screen, where the game will start again. 
+## Features to be Implemented
+* A locally leaderboard section to allow any user who plays the game on the device, to be ranked against people who are playing the game as well on that same device.
+* A global leaderboard to compete against users online.
+* Saving the time taken to solve the word and then using that as a ranking feature for the leaderboard.
+\
+&nbsp;
+[Back to Top](#table-of-contents)
 \
 &nbsp;
 
-### Light Mode
-An addition of the game includes the use of a light mode – making the website itself look like a whiteboard. It can be used at the start fo the game or the user can swap seamlessly throughout the game by pressing the icon located on the left hand side of the page. Similar to the dark mode, the start page essentially just swaps around the 2 primary colours.
+# Technologies Used
 
-![Home Page in Light Mode](documentation/light-home-page.png)
+## Languages
+* [HTML](https://en.wikipedia.org/wiki/HTML "HTML")
+* [CSS](https://en.wikipedia.org/wiki/CSS "CSS")
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript "JavaScript")
 
-If the user wants to swap to dark mode, they just had to click on the icon again. As the user continues to play the game, the game page follows the same rules in both light and dark mode as seen below:
-
-![Game Page in Light Mode](documentation/light-game-page.png)
+## Tools
+* [Gitpod](https://www.gitpod.io/ "Gitpod")
+* [GitHub](https://github.com/ "GitHub")
+* [Font Awesome](https://fontawesome.com/ "Font Awesome")
+* [Google Fonts](https://fonts.google.com/ "Google Fonts")
+* [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq")
+* [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
+* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
+* [JSHint](https://jshint.com/ “JSHint”)
+* [Web AIM](https://webaim.org/resources/contrastchecker/ "Web AIM")
+* [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en "Lighthouse")
+\
+&nbsp;
+[Back to Top](#table-of-contents)
 \
 &nbsp;
