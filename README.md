@@ -50,6 +50,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
     * [Responsiveness](#responsiveness "Responsiveness")
     * [Web Aim Contrast Checker](#web-aim-contrast-checker "Web Aim Contrast Checker")
     * [Browser Compatibility](#browser-compatibility "Browser Compatibility")
+    * [Manual Testing](#manual-testing "Manual Testing")	
 
 
 # UX
@@ -325,5 +326,35 @@ On desktop, Google Chrome, Mozilla Firefox and Microsoft Edge were utilised.
 On mobile, Google Chrome was utilised.
 
 The responsiveness and the appearance remained relatively the same across the various devices and browsers.
+\
+&nbsp;
+
+## Manual Testing
+As detailed above, the game was played on a variety of browsers and devices. It was also posted into a discord group to be peer reviewed and on the peer-code-review channel on the Code Institute’s Slack.
+The following elements were constantly checked and tested to ensure that they wouldn’t break or perform in an unexpected manner when playing the game:
+
+* Home Screen:
+	* Verified that clicking the light/dark mode button will change the colour of the screen.
+	* Verified that the user can’t start the game or register any keypresses successfully without pressing the start key.
+	* Therefore, verified that the hangman image cannot be altered or the game text cannot be removed without going into the console to deliberately alter the game.
+
+
+* Game Screen:
+	* Verified that pressing or clicking the wrong key (i.e., one not contained within the word) will add that letter to a string of wrong letters on the screen.
+	* Verified that selecting the wrong key will turn the key background to a shade of red. 
+	* Verified that selecting the wrong key will also add a body part to the hangman and therefore, will update the image.
+	* Verified that pressing or clicking the right key (i.e., one contained within the word) will add that letter to the letters with an underscore in the middle of the screen.
+	* Verified that selecting the right key will turn the key background to a shade of green. 
+	* Verified that selecting multiples of a key will not register it as right or wrong if it has been selected once.
+
+
+* Game Winner Modal Boxes:
+	* Verified that if the user wins, the keystrokes for the username input will not trigger the function which states that the user has lost if the username characters are not in the word.
+	* Verified that the modal box to congratulate the winner will only appear if the user submits a username or a blank string.
+	* Verified that the game can only start again if the user selects the “Play Again” button on the second modal box.
+
+
+* Game Loser Modal Box:
+	* Verified that the game can only start again if the user selects the “Play Again” button on the second modal box.
 \
 &nbsp;
