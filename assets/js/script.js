@@ -163,9 +163,15 @@ function wrong (key) {
                 break;
         }
     }
-    if (wrongAnswerCounter == 7) {
+    if (wrongAnswers == 7) {
+        resetEndGameValues();
+        if (mode === "dark"){
         document.getElementById('full-hangman-start').src = 'assets/images/full_body.png'; 
-        loser();
+    } else if (mode === "light") {
+        document.getElementById('full-hangman-start').src = 'assets/images/full_body_light.png';
+    }
+        document.getElementById("keyboard").style.visibility = "hidden";
+        document.removeEventListener("keydown", endGameLoser());
     }
 }
 
