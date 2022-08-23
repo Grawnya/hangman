@@ -169,6 +169,15 @@ button {
     margin: 3% auto;
 }
 
+/* color mode */
+#color-mode {
+    position: absolute;
+    top: 60%;
+    color: var(--white);
+    font-size: 2rem;
+    margin-left: 2%;
+}
+
 @media screen and (min-width:768px) {
     #full-hangman-start {
         padding: 1% 0;
