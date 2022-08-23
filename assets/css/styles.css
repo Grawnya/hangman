@@ -25,6 +25,10 @@ h1 {
     text-align: center;
 }
 
+button {
+    color: var(--dark-green);
+}
+
 /* Heading */
 #logo {
     padding-right: 1%;
