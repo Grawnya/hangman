@@ -24,8 +24,8 @@ h1 {
     height: 10vh;
     text-align: center;
 }
-/* Heading */
 
+/* Heading */
 #logo {
     padding-right: 1%;
     padding-top: 1%;
@@ -36,8 +36,8 @@ h1 {
 #full-hangman-start {
     margin: 0 auto;
     display: block;
-    padding: 3% 0; /* 1% for tablet+ */
-    width: auto; /* 25% for tablet+ */
+    padding: 3% 0;
+    width: 40%;
     max-height: 40vh;
 }
 
