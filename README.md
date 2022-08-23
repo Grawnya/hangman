@@ -29,6 +29,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
     * [Existing Features](#existing-features "Existing Features")
         * [Home Page](#home-page "Home Page")
         * [Game Screen (Core of the Application)](#game-screen-(core-of-the-application) "Game Screen (Core of the Application)")
+        * [Game Winner Modal Boxes](game-winner-modal-boxes "Game Winner Modal Boxes")
 
 
 # UX
@@ -150,5 +151,18 @@ The user can continuously click on or press down keys until one of the 2 criteri
 
 Both options prompt the appearance of modal boxes.
 
+\
+&nbsp;
+
+### Game Winner Modal Boxes
+If the user is successful, 2 modal boxes will appear, one after another. The first one prompts the user to put in their username, as seen below:
+
+![Username Prompt](documentation/win-modal-1.png)
+
+After the user has put in a username (or if they want to rename anonymous, they can leave it blank), the second modal box will pop up to let them know the number of wrong answers made until they got the right answer:
+
+![Congratulations Message](documentation/win-modal-2.png)
+
+The user is also prompted to select the play again button, which brings them to the game screen and starts the game again.
 \
 &nbsp;
