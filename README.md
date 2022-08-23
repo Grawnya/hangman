@@ -58,6 +58,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
         * [Console Error for Selecting the Wrong Letters Before Anything is Clicked](#console-error-for-selecting-the-wrong-letters-before-anything-is clicked "Console Error for Selecting the Wrong Letters Before Anything is Clicked")
         * [Setting off the Wrong Function when Filling in the Winning Modal Box Form](#setting-off-the-wrong-function-when-filling-in-the-winning-modal-box-form "Setting off the Wrong Function when Filling in the Winning Modal Box Form")
         * [Page Would Refresh Every Time the Winning Form was Filled in](#page-would-refresh-every-time-the-winning-form-was-filled-in "Page Would Refresh Every Time the Winning Form was Filled in")
+    * [Unresolved](#unresolved "Unresolved")
 
 
 
@@ -439,9 +440,19 @@ Remove the event listener and as a backup, introduce a function `resetEndGameVal
 Every time the user won the game and they put in their username, as they hit the submit button, it would cause the game to restart.
 
 **Cause:**
-The form had an action that would refresh the page every time (i.e., `action = “#“`.
+The form had an action that would refresh the page every time (i.e., `action = “#“`).
 
 **Resolution:**
 Include `event.preventDefault()` action into the function which obtains the username from the form.
 \
 &nbsp;
+
+## Unresolved
+None – but attempted to create a leaderboard, but when running the game nested arrays were obtained as results, which led to the creation of lots of rows in a table rather than only the top 5 results. Due to submission deadline approaching, I opted to leave out feature, but it will be added in the future.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
