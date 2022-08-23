@@ -24,6 +24,8 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
         * [Icons](#icons "Icons")
         * [Colours](#colours "Colours")
         * [Structure](#structure "Structure")
+* [Wireframes](#wireframes "Wireframes")
+
 
 # UX
 
@@ -87,6 +89,23 @@ The website will be built for a small mobile screen of width 320px and then will
 | small/mobile  |    320px   |
 | medium/tablet |    768px   |
 | large         |   992+px   |
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Wireframes
+[Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq") was used to create the conception for the website appearance and flow. I initially created a mobile version in-line with my mobile-first approach and then followed with a medium and large screen version. The key is to make sure that the whole game could fit on the one screen and no scrolling is required.
+
+Basic wireframes can be found below:
+
+
+### [Large Screen Wireframe](documentation/large-screen.png "Large Screen Wireframe ")
+### [Medium/Tablet Screen Wireframe]( documentation/tablet-screen.png " Medium/Tablet Screen Wireframe ")
+### [Mobile Wireframe]( documentation/small-mobile-screen.png "Mobile wireframe")
 
 
 \
