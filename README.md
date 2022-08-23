@@ -47,7 +47,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
             * [Final Attempt](#final-attempt-js "Final Attempt")
     * [Lighthouse](#lighthouse "Lighthouse")
         * [Final Attempt](#final-attempt-lighthouse "Final Attempt")
-
+    * [Responsiveness](#responsiveness "Responsiveness")
 
 # UX
 
@@ -280,3 +280,22 @@ After completing the project, Lighthouse was used to check the suitability on bo
 \
 &nbsp;
 
+## Responsiveness 
+The responsiveness of the design was manually checked using the Chrome Developer Tools for various screens. The manual testing itself will be discussed [here](#manual-testing "Manual Testing").
+
+This included:
+* iPhone SE
+* Pixel 5
+* Samsung Galaxy S8, S20 Ultra
+* iPad Air and Mini
+* Galaxy Fold
+* Nest Hub and Hub Max
+
+I also opted to use the responsiveness option and checked the screens at the following width sizes:
+* 320px
+* 768px
+* 992px
+
+No issues arose, due to the responsive design of the website with rem and % values.
+\
+&nbsp;
