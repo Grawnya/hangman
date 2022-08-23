@@ -15,6 +15,7 @@ function colorMode() {
     document.getElementById("change-mode").addEventListener("click", function() {
         var currentImage = document.getElementById('full-hangman-start').src;
         var keyboardKeys = document.getElementsByClassName("keyboard-button");
+        
         // convert to light mode
         if (mode === "dark") {
             document.getElementById("logo").src ="assets/images/full_body_light.png";
@@ -34,6 +35,23 @@ function colorMode() {
             }
             mode = "light";
             
+            // convert to dark mode
+        }else if (mode === "light") {
+            document.getElementById("logo").src ="assets/images/full_body.png";
+            document.documentElement.style.setProperty('--dark-green', '#033e05');
+            document.documentElement.style.setProperty('--white', '#ffffff');
+            if (currentImage.includes("_light")) {
+                currentImage = currentImage.slice(0, -10);
+                currentImage = currentImage + '.png';
+                document.getElementById('full-hangman-start').src = currentImage;
+            }
+            
+            for (let i = 0; i < keyboardKeys.length; i++) {
+                if (keyboardKeys[i].style.backgroundColor != "#0ff04d" && keyboardKeys[i].style.backgroundColor != "#f81307") {
+                    keyboardKeys[i].style.backgroundColor = "#ffffff";
+                } 
+            }
+            mode = "dark";
         }
     });
 }
