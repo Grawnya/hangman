@@ -180,7 +180,7 @@ function right (key) {
     document.getElementById(key).style.backgroundColor = "#0ff04d";
     let suitableGap = document.getElementsByClassName("word-letter");
     for (let i = 0; i < individualLetters.length; i ++) {
-        if (key == individualLetters[i] && lettersLeft != 0) {
+        if (key == individualLetters[i]) {
             suitableGap[i].innerText = key;
             lettersLeft -= 1;
             if (lettersLeft == 0 && endGameWinner() == false) {
@@ -188,13 +188,7 @@ function right (key) {
                 document.removeEventListener("keydown", endGameWinner());
                 document.getElementById("keyboard").style.visibility = "hidden";
             }
-        } 
-    }
-}
-
-function addToPressedKeysArray (key) {
-    if (!lettersPressed.includes(key)) {
-        lettersPressed.push(key);
+        }
     }
 }
 
