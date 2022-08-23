@@ -194,7 +194,7 @@ function right (key) {
 
 // if all the right letters: prompt user for name, show score on leaderboard and ask to play again
 function endGameWinner () {
-    var answersWrong = wrongAnswerCounter;
+    var answersWrong = wrongAnswers;
     resetEndGameValues();
     document.getElementById("wrong-answers-printed").style.visibility = 'hidden';
     document.getElementById("modal-box-win").style.display = "block";
@@ -211,15 +211,10 @@ function endGameWinner () {
     });
 }
 
-// if the counter reaches 7, send message that lets the user play again
-function loser () {
-    lettersLeft = 1000;
-    console.log("loser");
+// if guesses run out: say what word was and ask to play again
+function endGameLoser () {
+    resetEndGameValues();
     document.getElementById("modal-box-win").style.display = "none";
-    document.getElementById("leaderboard").style.display = "block";
-    document.getElementById("leaderboard").style.zIndex = "3";
-    
-    document.getElementById("leaderboard-caption").innerText = "You Lost";
     document.getElementById("play-again-button").addEventListener("click", function () {
         playAgain();
     });
