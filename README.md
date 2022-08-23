@@ -55,7 +55,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
 * [Bugs](#bugs "Bugs")
     * [Resolved](#resolved "Resolved")
         * [Letters Not loading When Clicked](#letters-not-loading-when-clicked "Letters Not loading When Clicked")
-        * [Console Error for Selecting the Wrong Letters Before Anything is Clicked](#console-error-for-selecting-the-wrong-letters-before-anything-is clicked "Console Error for Selecting the Wrong Letters Before Anything is Clicked")
+        * [Console Error for Selecting the Wrong Letters Before Anything is Clicked](#console-error-for-selecting-the-wrong-letters-before-anything-is-clicked "Console Error for Selecting the Wrong Letters Before Anything is Clicked")
         * [Setting off the Wrong Function when Filling in the Winning Modal Box Form](#setting-off-the-wrong-function-when-filling-in-the-winning-modal-box-form "Setting off the Wrong Function when Filling in the Winning Modal Box Form")
         * [Page Would Refresh Every Time the Winning Form was Filled in](#page-would-refresh-every-time-the-winning-form-was-filled-in "Page Would Refresh Every Time the Winning Form was Filled in")
     * [Unresolved](#unresolved "Unresolved")
@@ -234,7 +234,7 @@ The user can swap back to dark mode by just clicking on the icon again. As the u
 * [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq")
 * [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
 * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
-* [JSHint](https://jshint.com/ “JSHint”)
+* [JSHint](https://jshint.com/ "JSHint")
 * [Web AIM](https://webaim.org/resources/contrastchecker/ "Web AIM")
 * [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en "Lighthouse")
 
@@ -380,7 +380,7 @@ The following elements were constantly checked and tested to ensure that they wo
 	* On the home page, there is a short statement on how to play the game – “Guess the missing Letters of a word using the keyboard”. The large start button prompts the user to select it and by selecting keys, the logical progression of the game means that the user will either lose of=r win at some point. These will trigger the modal boxes which will walk the user through playing the game again.
 
 3. As a user, I want to play a game that is not slow to run.
-	* This is vital to keep the user interested in the game, especially if they have poor Wi-Fi. The [Lighthouse](#lighthouse “Lighthouse”) section highlights that the game has high performance and accessibility results on both phone and desktop, which means that it’ll perform at a reasonably quick pace.
+	* This is vital to keep the user interested in the game, especially if they have poor Wi-Fi. The [Lighthouse](#lighthouse "Lighthouse") section highlights that the game has high performance and accessibility results on both phone and desktop, which means that it’ll perform at a reasonably quick pace.
 
 4. As a user, I want to know if the letter I selected is in the word or not in the game.
 	* The logic of the game requires the user to know if they have selected a letter within the word, as this will dictate how many guesses they have left. The user is told that their letter selection is wrong if the key they have selected has been added to the “Wrong:” section and the key background has turned red. The hangman image will also add an extra body part. Similarly, if the letter is correct, the letter will be added to the word that the user is trying to solve in the section of underscores and the key will turn green.
@@ -434,7 +434,7 @@ An `if` statement was added to the function which deduces if a letter is correct
 Even if the user won the game, when they began to type in their username into the form, it would still prompt the user to register the letters as incorrect values if the letter was not in the word. Eventually this led to the user losing if they have more letters in their username that were not in the word.
 
 **Cause:**
-The wrong() function would still set off.
+The `wrong()` function would still set off.
 
 **Resolution:**
 Remove the event listener and as a backup, introduce a function `resetEndGameValues()` that would prevent the user from setting off the losing game function unless they had 1000+ incorrect letters in their name that did not appear in the word.
