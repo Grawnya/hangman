@@ -113,35 +113,53 @@ function wrong (key) {
         document.getElementById("printing-wrong-letters").innerText = wrongAnswerToPrint;
         wrongAnswers += 1;
     
-        switch (wrongAnswerCounter) {
+        switch (wrongAnswers) {
             case 1:
-                document.getElementById('full-hangman-start').src = 'assets/images/frame_gain.png';
-    
+                if (mode === "dark"){
+                    document.getElementById('full-hangman-start').src = 'assets/images/frame_gain.png';
+                } else if (mode === "light") {
+                    document.getElementById('full-hangman-start').src = 'assets/images/frame_gain_light.png';
+                }
                 break;
         
             case 2:
+                if (mode === "dark"){
                 document.getElementById('full-hangman-start').src = 'assets/images/head_gain.png';
-    
+            } else if (mode === "light") {
+                document.getElementById('full-hangman-start').src = 'assets/images/head_gain_light.png';
+            }
                 break;
         
             case 3:
+                if (mode === "dark"){
                 document.getElementById('full-hangman-start').src = 'assets/images/body_gain.png';
-    
+            } else if (mode === "light") {
+                document.getElementById('full-hangman-start').src = 'assets/images/body_gain_light.png';
+            }
                 break;
         
             case 4:
+                if (mode === "dark"){
                 document.getElementById('full-hangman-start').src = 'assets/images/left_arm_gain.png';
-
+            } else if (mode === "light") {
+                document.getElementById('full-hangman-start').src = 'assets/images/left_arm_gain_light.png';
+            }
                 break;
     
             case 5:
+                if (mode === "dark"){
                 document.getElementById('full-hangman-start').src = 'assets/images/right_arm_gain.png';
-    
+            } else if (mode === "light") {
+                document.getElementById('full-hangman-start').src = 'assets/images/right_arm_gain_light.png';
+            }
                 break;
         
             case 6:
+                if (mode === "dark"){
                 document.getElementById('full-hangman-start').src = 'assets/images/left_leg_gain.png';
-    
+            } else if (mode === "light") {
+                document.getElementById('full-hangman-start').src = 'assets/images/left_leg_gain_light.png';
+            }
                 break;
         }
     }
