@@ -69,18 +69,9 @@ function startGame () {
     individualLetters = word.split("");
     document.getElementById('game-type-buttons').addEventListener('click', function (event) {
         document.getElementById("wrong-answers-printed").style.visibility = 'visible';
-
+        resetView();
         mouseSelectLetter(word);
         keyboardSelectLetter(word);
-    });
-}
-
-function formatafterStart () {
-    document.getElementById('guessing-letters').style.paddingTop = "3rem";
-    document.getElementById('full-hangman-start').style.paddingTop = "5%";
-    var startLettersNodeList = document.querySelectorAll('.word-letter');
-    startLettersNodeList.forEach(function (item) {
-        item.innerText = "_";
     });
 }
 
