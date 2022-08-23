@@ -10,6 +10,14 @@ var word = "";
 var individualLetters = [];
 startGame();
 
+// change colour mode
+function colorMode() {
+    document.getElementById("change-mode").addEventListener("click", function() {
+        var currentImage = document.getElementById('full-hangman-start').src;
+        var keyboardKeys = document.getElementsByClassName("keyboard-button");
+    });
+}
+
 function startGame () {
     document.getElementById('game-type-buttons').addEventListener('click', function (event) {
         if (event.detail) {
