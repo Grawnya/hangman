@@ -199,12 +199,12 @@ function endGameWinner () {
     document.getElementById("wrong-answers-printed").style.visibility = 'hidden';
     document.getElementById("modal-box-win").style.display = "block";
     document.getElementById("modal-submit-username").addEventListener("click", function (event) {
-        var usernameValue = document.getElementById("name-input").value;
-        document.getElementById("modal-box-win").style.display = "none";
-        document.getElementById("leaderboard").style.display = "block";
-        document.getElementById("leaderboard").style.visibility = "visible";
-        document.getElementById("leaderboard").style.zIndex = "3";
         event.preventDefault();
+        var usernameValue = document.getElementById("name-input").value;
+        var winner = `Congrats ${usernameValue}, You Won! You got the correct answer with only ${answersWrong} wrong guess(es).`;
+        document.getElementById("replay-heading").innerText = winner;
+        document.getElementById("modal-box-win").style.display = "none";
+        document.getElementById("replay").style.display = "block";
         document.getElementById("play-again-button").addEventListener("click", function () {
             playAgain();
         });
