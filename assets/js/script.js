@@ -84,7 +84,6 @@ function formatafterStart () {
 function pickWord() {
     var indexOfWordToGuess = Math.floor(Math.random() * WORDS.length);
     var wordToGuess = WORDS[indexOfWordToGuess];
-    console.log(wordToGuess.toUpperCase());
     return wordToGuess.toUpperCase();
 }
 
