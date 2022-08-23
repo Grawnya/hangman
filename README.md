@@ -60,6 +60,10 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
         * [Page Would Refresh Every Time the Winning Form was Filled in](#page-would-refresh-every-time-the-winning-form-was-filled-in "Page Would Refresh Every Time the Winning Form was Filled in")
     * [Unresolved](#unresolved "Unresolved")
 * [Deployment](#deployment "Deployment")
+* [Credits](#credits "Credits")
+    * [For Code Help and Advice](#for-code-help-and-advice "For Code Help and Advice")
+    * [For Content](#for-content "For Content")
+    * [For Code](#for-code "For Code")
 
 
 # UX
@@ -467,6 +471,26 @@ During the process of coding up the website, the code was deployed on GitHub to 
 4. Press the “Save” button.
 5. Wait a few minutes and the website should be deployed at the [link]( https://grawnya.github.io/hangman/) above the “Source” section.
 6. Any changes committed after the website has been deployed will cause the website to be updated shortly after they are committed.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Credits
+
+## For Code Help and Advice
+* [Harry Dhillon](https://github.com/Harry-Leepz)
+\
+&nbsp;
+
+## For Content
+* [Basis for Hangman Images](https://iconbros.com/icons/ib-g-hangman)
+* [100 random words](https://randomwordgenerator.com/)
+
+## For Code
+* [Keyboard for Game](https://www.freecodecamp.org/news/build-a-wordle-clone-in-javascript/)
 
 \
 &nbsp;
