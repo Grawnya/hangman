@@ -99,4 +99,4 @@ export const WORDS = [
 'satisfy',
 'deserve',
 'specify'
-]
+];
