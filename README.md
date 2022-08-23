@@ -31,6 +31,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
         * [Game Screen](#game-screen "Game Screen")
         * [Game Winner Modal Boxes](#game-winner-modal-boxes "Game Winner Modal Boxes")
         * [Game Loser Modal Boxes](#game-loser-modal-boxes "Game Loser Modal Boxes")
+        * [Light Mode](#light-mode "Light Mode")
 
 
 # UX
@@ -151,7 +152,6 @@ The user can continuously click on or press down keys until one of the 2 criteri
 2. The user has selected 7 wrong letters and therefore, has ran out of option to select a new letter and has lost.
 
 Both options prompt the appearance of modal boxes.
-
 \
 &nbsp;
 
@@ -165,9 +165,20 @@ After the user has put in a username (or if they want to rename anonymous, they 
 ![Congratulations Message](documentation/win-modal-2.png)
 
 The user is also prompted to select the play again button, which brings them to the game screen and starts the game again.
-
 \
 &nbsp;
+
+### Light Mode
+An addition of the game includes the use of a light mode – making the website itself look like a whiteboard. It can be used at the start of the game or the user can swap seamlessly throughout the game by pressing the icon located on the left hand side of the page. Similar to the dark mode, the start page essentially just swaps around the 2 primary colours.
+
+![Home Page in Light Mode](documentation/light-home-page.png)
+
+The user can swap back to dark mode by just clicking on the icon again. As the user continues to play the game, the game page follows the same rules in both light and dark mode as seen below:
+
+![Game Page in Light Mode](documentation/light-game-page.png)
+\
+&nbsp;
+
 
 ### Game Loser Modal Box
 If the user is unsuccessful, only a single modal box appears. Letting the user know what the correct word was and prompting them to play again:
@@ -175,5 +186,16 @@ If the user is unsuccessful, only a single modal box appears. Letting the user k
 ![Losing Message](documentation/lose-modal-1.png)
 
 If the user opts to select the play again button, like the [Game Winner Modal Boxes](#game-winner-modal-boxes "Game Winner Modal Boxes"), the user will be redirected to the game screen, where the game will start again. 
+\
+&nbsp;
+
+### Light Mode
+An addition of the game includes the use of a light mode – making the website itself look like a whiteboard. It can be used at the start fo the game or the user can swap seamlessly throughout the game by pressing the icon located on the left hand side of the page. Similar to the dark mode, the start page essentially just swaps around the 2 primary colours.
+
+![Home Page in Light Mode](documentation/light-home-page.png)
+
+If the user wants to swap to dark mode, they just had to click on the icon again. As the user continues to play the game, the game page follows the same rules in both light and dark mode as seen below:
+
+![Game Page in Light Mode](documentation/light-game-page.png)
 \
 &nbsp;
