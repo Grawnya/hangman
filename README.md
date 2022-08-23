@@ -43,7 +43,8 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
             * [Final Attempt](#final-attempt-html "Final Attempt")
         * [W3C CSS Validator](#w3c-css-validator "W3C CSS Validator")
             * [First Attempt](#first-attempt-css "First Attempt")
-
+        * [JSHint](#jshint "JSHint")
+            * [Final Attempt](#final-attempt-js "Final Attempt")
 
 
 
@@ -245,7 +246,9 @@ No issues arose.
 \
 &nbsp;
 
-### W3C CSS Validator 
+### W3C CSS Validator
+I validated my CSS upon completion with [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CCC"). The attempt for the [Website](#home-page "Home Page") can be seen below.
+
 #### First Attempt (CSS)
 No issues arose. 
 
@@ -253,3 +256,12 @@ No issues arose.
 \
 &nbsp;
 
+### JSHint
+The primary JavaScript document `script.js` was often run through [JSHint](https://jshint.com/ "JSHint") to check for any syntax or declaration errors. Below contains the returned results of the script.
+
+#### Final Attempt (JS)
+No issues arose. 
+
+![W3C CSS Validator Test Result](documentation/js_hint_validation.png)
+\
+&nbsp;
