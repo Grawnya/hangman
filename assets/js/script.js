@@ -175,20 +175,20 @@ function wrong (key) {
     }
 }
 
-/* if a letter is pressed and is right, the letter block turns green, the word checks if its equal to the original input
-and if not, it lets the user pick another letter */
-function rightLetterSelected (key) {
+// if a letter is pressed and is right, the letter block turns green and it adds letter to screen
+function right (key) {
     document.getElementById(key).style.backgroundColor = "#0ff04d";
     let suitableGap = document.getElementsByClassName("word-letter");
     for (let i = 0; i < individualLetters.length; i ++) {
         if (key == individualLetters[i] && lettersLeft != 0) {
             suitableGap[i].innerText = key;
             lettersLeft -= 1;
+            if (lettersLeft == 0 && endGameWinner() == false) {
+                resetEndGameValues();
+                document.removeEventListener("keydown", endGameWinner());
+                document.getElementById("keyboard").style.visibility = "hidden";
+            }
         } 
-    }
-    if (lettersLeft == 0) {
-
-        winner();
     }
 }
 
