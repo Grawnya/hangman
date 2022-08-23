@@ -68,6 +68,7 @@ function startGame () {
     word = pickWord();
     individualLetters = word.split("");
     document.getElementById('game-type-buttons').addEventListener('click', function (event) {
+        document.getElementById("printing-wrong-letters").innerText = wrongAnswerToPrint;
         document.getElementById("wrong-answers-printed").style.visibility = 'visible';
         resetView();
         mouseSelectLetter(word);
