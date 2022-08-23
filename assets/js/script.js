@@ -232,21 +232,6 @@ function playAgain () {
     clickStartButton();
 }
 
-function resetScreen() {
-    var hangman = "HANGMAN";
-    var resetStartLettersNodeList = document.querySelectorAll('.word-letter');
-    for (let j = 0; j < resetStartLettersNodeList.length; j++) {
-        resetStartLettersNodeList[j].innerHTML = hangman[j];
-    }
-    document.getElementById('keyboard').style.visibility = 'hidden';
-    document.getElementById('game-type-buttons').style.visibility = 'visible';
-    document.getElementById("leaderboard").style.display = "none";
-    var keyboardKeys = document.getElementsByClassName("keyboard-button");
-    for (let i = 0; i < keyboardKeys.length; i++) {
-        keyboardKeys[i].style.backgroundColor = "#ffffff";
-    }
-}
-
 // resets the view of the screen to the start of a game
 function resetView () {
     document.getElementById('game-type-buttons').style.visibility = 'hidden';
