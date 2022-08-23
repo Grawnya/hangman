@@ -80,7 +80,8 @@ function formatafterStart () {
     });
 }
 
-function randomlySelectWord () {
+// pick word
+function pickWord() {
     var indexOfWordToGuess = Math.floor(Math.random() * WORDS.length);
     var wordToGuess = WORDS[indexOfWordToGuess];
     console.log(wordToGuess.toUpperCase());
