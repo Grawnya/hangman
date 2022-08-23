@@ -181,7 +181,6 @@ button {
 @media screen and (min-width:768px) {
     #full-hangman-start {
         padding: 1% 0;
-        width: 25%;
     }
 }
 
