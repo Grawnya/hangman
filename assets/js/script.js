@@ -15,6 +15,26 @@ function colorMode() {
     document.getElementById("change-mode").addEventListener("click", function() {
         var currentImage = document.getElementById('full-hangman-start').src;
         var keyboardKeys = document.getElementsByClassName("keyboard-button");
+        // convert to light mode
+        if (mode === "dark") {
+            document.getElementById("logo").src ="assets/images/full_body_light.png";
+            document.documentElement.style.setProperty('--dark-green', '#ffffff');
+            document.documentElement.style.setProperty('--white', '#1d4999');
+            
+            if (!currentImage.includes("_light")) {
+                currentImage = currentImage.slice(0, -4);
+                currentImage = currentImage + '_light.png';
+                document.getElementById('full-hangman-start').src = currentImage;
+            }
+
+            for (let i = 0; i < keyboardKeys.length; i++) {
+                if (keyboardKeys[i].style.backgroundColor != "#0ff04d" && keyboardKeys[i].style.backgroundColor != "#f81307") {
+                    keyboardKeys[i].style.backgroundColor = "#1d4999";
+                } 
+            }
+            mode = "light";
+            
+        }
     });
 }
 
