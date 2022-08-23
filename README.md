@@ -28,8 +28,9 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
 * [Features](#features "Features")
     * [Existing Features](#existing-features "Existing Features")
         * [Home Page](#home-page "Home Page")
-        * [Game Screen (Core of the Application)](#game-screen-(core-of-the-application) "Game Screen (Core of the Application)")
-        * [Game Winner Modal Boxes](game-winner-modal-boxes "Game Winner Modal Boxes")
+        * [Game Screen](#game-screen "Game Screen")
+        * [Game Winner Modal Boxes](#game-winner-modal-boxes "Game Winner Modal Boxes")
+        * [Game Loser Modal Boxes](#game-loser-modal-boxes "Game Loser Modal Boxes")
 
 
 # UX
@@ -135,7 +136,7 @@ The larger screen sizes include room either side of the game so the image mainta
 \
 &nbsp;
 
-### Game Screen (Core of the Application)
+### Game Screen
 The game screen is the screen of most importance in the game as the user spends most of their time here when on the website. The game automatically begins by clearing the default letters HANGMAN, as well as removing the start button, hangman image and the introductory sentence. A keyboard is also introduced at the bottom of the screen, which is ideal for mobile or tablet users, who might not have an external keyboard.
 
 ![Game Screen at the Start](documentation/game-screen-at-start.png)
@@ -164,5 +165,15 @@ After the user has put in a username (or if they want to rename anonymous, they 
 ![Congratulations Message](documentation/win-modal-2.png)
 
 The user is also prompted to select the play again button, which brings them to the game screen and starts the game again.
+
+\
+&nbsp;
+
+### Game Loser Modal Box
+If the user is unsuccessful, only a single modal box appears. Letting the user know what the correct word was and prompting them to play again:
+
+![Losing Message](documentation/lose-modal-1.png)
+
+If the user opts to select the play again button, like the [Game Winner Modal Boxes](#game-winner-modal-boxes "Game Winner Modal Boxes"), the user will be redirected to the game screen, where the game will start again. 
 \
 &nbsp;
