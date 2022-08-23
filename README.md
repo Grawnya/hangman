@@ -23,7 +23,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
         * [Font](#font "Font")
         * [Icons](#icons "Icons")
         * [Colours](#colours "Colours")
-
+        * [Structure](#structure "Structure")
 
 # UX
 
@@ -78,3 +78,19 @@ Where:
 *  #ffffff (also known as --white) is used for the images, fonts and modal box background colour in dark mode, but is used for the background of the game, as well as the font and button background in the modal boxes in light mode.
 *  #0ff04d is used for the background of the key if it is correct and contained in the word.
 *  #f81307 is used for the background of the key if it is wrong and not contained in the word.
+
+### Structure
+The website will be built for a small mobile screen of width 320px and then will also meet the requirements for a medium/tablet and large screen, as shown in the table below.
+
+| Screen Size   | Breakpoint |
+| -----------   | ---------- |
+| small/mobile  |    320px   |
+| medium/tablet |    768px   |
+| large         |   992+px   |
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
