@@ -68,6 +68,8 @@ function startGame () {
     word = pickWord();
     individualLetters = word.split("");
     document.getElementById('game-type-buttons').addEventListener('click', function (event) {
+        document.getElementById("wrong-answers-printed").style.visibility = 'visible';
+
         mouseSelectLetter(word);
         keyboardSelectLetter(word);
     });
@@ -254,4 +256,20 @@ function resetScreen() {
     }
 }
 
-// if time: make light and dark mode
+// resets the view of the screen to the start of a game
+function resetView () {
+    document.getElementById('game-type-buttons').style.visibility = 'hidden';
+    document.getElementById('game-type-buttons').style.display = 'none';
+    if (mode === "dark") {
+        document.getElementById('full-hangman-start').src = 'assets/images/blank_image.png';
+    } else if (mode === "light") {
+        document.getElementById('full-hangman-start').src = 'assets/images/blank_image_light.png';
+    }
+    document.getElementById('guessing-letters').style.paddingTop = "1rem";
+    document.getElementById('full-hangman-start').style.paddingTop = "2%";
+    var startLettersNodeList = document.querySelectorAll('.word-letter');
+    startLettersNodeList.forEach(function (item) {
+        item.innerText = "_";
+    });
+    document.getElementById('keyboard').style.visibility = 'visible';
+}
