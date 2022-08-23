@@ -8,9 +8,9 @@ var mode = "dark";
 colorMode();
 var word = "";
 var individualLetters = [];
-clickStartButton();
+startGame();
 
-function clickStartButton () {
+function startGame () {
     document.getElementById('game-type-buttons').addEventListener('click', function (event) {
         if (event.detail) {
             formatafterStart();
