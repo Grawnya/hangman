@@ -59,7 +59,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
         * [Setting off the Wrong Function when Filling in the Winning Modal Box Form](#setting-off-the-wrong-function-when-filling-in-the-winning-modal-box-form "Setting off the Wrong Function when Filling in the Winning Modal Box Form")
         * [Page Would Refresh Every Time the Winning Form was Filled in](#page-would-refresh-every-time-the-winning-form-was-filled-in "Page Would Refresh Every Time the Winning Form was Filled in")
     * [Unresolved](#unresolved "Unresolved")
-
+* [Deployment](#deployment "Deployment")
 
 
 # UX
@@ -456,3 +456,20 @@ None – but attempted to create a leaderboard, but when running the game nested
 \
 &nbsp;
 
+
+# Deployment
+
+During the process of coding up the website, the code was deployed on GitHub to allow for continuous manual testing and code validation. The following steps were conducted to deploy the website on GitHub:
+
+1. Commit the code, go to the GitHub repository and select the settings tab in the navigation bar below the repository name.
+2. In the left hand side menu, navigate down to the “Code and Automation” section and select the “Pages” option.
+3. At the top of the page, there is a “Source” section, with a drop-down menu, prompting the user to select a branch. Select the “main” branch.
+4. Press the “Save” button.
+5. Wait a few minutes and the website should be deployed at the [link]( https://grawnya.github.io/hangman/) above the “Source” section.
+6. Any changes committed after the website has been deployed will cause the website to be updated shortly after they are committed.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
