@@ -79,6 +79,14 @@ function keyboardSelectLetter (word) {
     document.addEventListener("keydown", function(event) {
         let keyPressed = event.key;
         let upperKeyPressed = keyPressed.toUpperCase();
+        if (!selectedLetters.includes(upperKeyPressed)) {
+            selectedLetters.push(upperKeyPressed);
+            if (individualLetters.includes(upperKeyPressed)) {
+                right(upperKeyPressed);
+            } else {
+                wrong(upperKeyPressed);
+            }
+        }
     });
 }
 
@@ -86,6 +94,14 @@ function mouseSelectLetter (word) {
     document.addEventListener("click", function(event) {
         let keyClicked = event.target.innerText;
         let upperKeyClicked = keyClicked.toUpperCase();
+        if (!selectedLetters.includes(upperKeyClicked)) {
+            selectedLetters.push(upperKeyClicked);
+            if (individualLetters.includes(upperKeyClicked)) {
+                right(upperKeyClicked);
+            } else {
+                wrong(upperKeyClicked);
+            }
+        }
     });
 }
 
