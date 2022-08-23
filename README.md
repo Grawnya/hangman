@@ -22,7 +22,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
     * [Design Choices](#design-choices "Design Choices")
         * [Font](#font "Font")
         * [Icons](#icons "Icons")
-
+        * [Colours](#colours "Colours")
 
 
 # UX
@@ -66,3 +66,15 @@ To deviate from the standard fonts, [Google Fonts](https://fonts.google.com/ "Go
 
 ### Icons
 In order to obtain some icons for the website, [Font Awesome](https://fontawesome.com/ "Font Awesome") will be utilised. An icon is only required for the dark/light mode button as the hangman images are all pictures.
+
+### Colours
+To select the colour palette for the project, was inspired by a traditional blackboard for the dark mode, and by a whiteboard for the light mode. For dark mode, when checking the contrast of the colours on [Web AIM](https://webaim.org/resources/contrastchecker/ "Web AIM"), the dark green with the white passed. For the light mode, the dark blue with the white also passed. Therefore, the following colours were selected for the project:
+
+![Colour Palette](documentation/final-color-pallette.jpg)
+
+Where:
+*  #033e05 (also known as --dark green) is used for the background of the game in dark mode, as well as the font and the button background colour of the modal boxes.
+*  #1d4999 is used for the image and fonts of the game in light mode, as well as the background colour of the modal boxes.
+*  #ffffff (also known as --white) is used for the images, fonts and modal box background colour in dark mode, but is used for the background of the game, as well as the font and button background in the modal boxes in light mode.
+*  #0ff04d is used for the background of the key if it is correct and contained in the word.
+*  #f81307 is used for the background of the key if it is wrong and not contained in the word.
