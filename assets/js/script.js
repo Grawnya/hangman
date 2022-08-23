@@ -225,10 +225,13 @@ function endGameLoser () {
 }
 
 function playAgain () {
-    resetScreen();
-    wrongAnswerCounter = 0;
-    lettersPressed = [];
+    selectedLetters = [];
+    wrongAnswers = 0;
     lettersLeft = 7;
+    wrongAnswerToPrint = "Wrong: ";
+    document.getElementById("printing-wrong-letters").innerText = wrongAnswerToPrint;
+    document.getElementById("wrong-answers-printed").style.visibility = 'visible';
+    
     clickStartButton();
 }
 
