@@ -214,7 +214,11 @@ function endGameWinner () {
 // if guesses run out: say what word was and ask to play again
 function endGameLoser () {
     resetEndGameValues();
-    document.getElementById("modal-box-win").style.display = "none";
+    document.getElementById("wrong-answers-printed").style.visibility = 'hidden';
+    var answer = `You Lost! The answer was ${word}.`;
+    document.getElementById("replay-heading").innerText = answer;
+    document.getElementById("replay").style.display = "block";
+    
     document.getElementById("play-again-button").addEventListener("click", function () {
         playAgain();
     });
