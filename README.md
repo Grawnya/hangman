@@ -36,6 +36,11 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
 * [Technologies Used](#technologies-used "Technologies Used")
     * [Languages](#languages "Languages")
     * [Tools](#tools "Tools")
+* [Testing](#testing "Testing")
+    * [Code Validation](#code-validation "Code Validation")
+            * [First Attempt](#first-attempt-html "First Attempt")
+            * [Final Attempt](#final-attempt-html "Final Attempt")
+
 
 
 # UX
@@ -214,5 +219,24 @@ The user can swap back to dark mode by just clicking on the icon again. As the u
 \
 &nbsp;
 [Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Testing
+
+## Code Validation 
+### W3C HTML Validator
+I validated my HTML at various stages of the website creation using the [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML"). The various attempts for the [Website](#home-page "Home Page") can be seen below.
+
+#### First Attempt (HTML)
+The primary issue that arose in the first attempt occurred when the action of the form was left blank. This was rectified by placing a ‘#’ symbol inside the action and an `event.preventDefault()` command in the associated JavaScript function to prevent the page from reloading when the user would submit their username.
+
+![First W3C HTML Validator Test Result](documentation/error_form_refreshing_page.png)
+
+
+#### Final Attempt (HTML)
+No issues arose.
+
+![Final W3C HTML Validator Test Result](documentation/w3c-html-validator-attempt-2.png)
 \
 &nbsp;
