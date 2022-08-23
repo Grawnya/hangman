@@ -47,7 +47,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
             * [Final Attempt](#final-attempt-js "Final Attempt")
     * [Lighthouse](#lighthouse "Lighthouse")
         * [Final Attempt](#final-attempt-lighthouse "Final Attempt")
-        
+
 
 # UX
 
@@ -76,7 +76,6 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
 * I expect the website to be completely responsive to all screen sizes
 * I expect to set up the form if the user wins, so that it has to be correctly filled out in order for it to be successfully submitted and used to manipulate the DOM.
 * I expect the user to utilise the dark/light mode functionality of the website throughout the game.
-
 
 \
 &nbsp;
@@ -112,7 +111,6 @@ The website will be built for a small mobile screen of width 320px and then will
 | medium/tablet |    768px   |
 | large         |   992+px   |
 
-
 \
 &nbsp;
 [Back to Top](#table-of-contents)
@@ -128,7 +126,6 @@ Basic wireframes can be found below:
 ### [Large Screen Wireframe](documentation/large-screen.png "Large Screen Wireframe ")
 ### [Medium/Tablet Screen Wireframe]( documentation/tablet-screen.png " Medium/Tablet Screen Wireframe ")
 ### [Mobile Wireframe]( documentation/small-mobile-screen.png "Mobile wireframe")
-
 
 \
 &nbsp;
@@ -198,6 +195,7 @@ The user can swap back to dark mode by just clicking on the icon again. As the u
 * A locally leaderboard section to allow any user who plays the game on the device, to be ranked against people who are playing the game as well on that same device.
 * A global leaderboard to compete against users online.
 * Saving the time taken to solve the word and then using that as a ranking feature for the leaderboard.
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)
@@ -222,6 +220,7 @@ The user can swap back to dark mode by just clicking on the icon again. As the u
 * [JSHint](https://jshint.com/ “JSHint”)
 * [Web AIM](https://webaim.org/resources/contrastchecker/ "Web AIM")
 * [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en "Lighthouse")
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)
@@ -238,7 +237,6 @@ I validated my HTML at various stages of the website creation using the [W3C HTM
 The primary issue that arose in the first attempt occurred when the action of the form was left blank. This was rectified by placing a ‘#’ symbol inside the action and an `event.preventDefault()` command in the associated JavaScript function to prevent the page from reloading when the user would submit their username.
 
 ![First W3C HTML Validator Test Result](documentation/error_form_refreshing_page.png)
-
 
 #### Final Attempt (HTML)
 No issues arose.
@@ -281,3 +279,4 @@ After completing the project, Lighthouse was used to check the suitability on bo
 ![Lighthouse Final Attempt](documentation/lighthouse-mobile.png)
 \
 &nbsp;
+

@@ -172,7 +172,7 @@ button {
 /* color mode */
 #color-mode {
     position: absolute;
-    top: 60%;
+    top: 40%;
     color: var(--white);
     font-size: 2rem;
     margin-left: 2%;
