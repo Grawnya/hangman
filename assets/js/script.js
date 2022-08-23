@@ -239,7 +239,12 @@ function playAgain () {
             keyboardKeys[i].style.backgroundColor = "#1d4999";
         }
     }
-    clickStartButton();
+    document.getElementById("replay").style.display = "none";
+    word = pickWord();
+    individualLetters = word.split("");
+    resetView();
+    mouseSelectLetter(word);
+    keyboardSelectLetter(word);
 }
 
 // resets the view of the screen to the start of a game
