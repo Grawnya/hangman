@@ -10,3 +10,8 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
 [Visit the Project's GitHub Repository Here]( https://github.com/Grawnya/hangman)
 
 ![Responsive Display](documentation/responsive-screens.png)
+
+# Table of Contents
+
+* [UX](#ux "UX")
+    * [User Goals](#user-goals "User Goals")
