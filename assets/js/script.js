@@ -195,27 +195,11 @@ function right (key) {
 // if all the right letters: prompt user for name, show score on leaderboard and ask to play again
 function endGameWinner () {
     var answersWrong = wrongAnswerCounter;
+    resetEndGameValues();
+    document.getElementById("wrong-answers-printed").style.visibility = 'hidden';
     document.getElementById("modal-box-win").style.display = "block";
     document.getElementById("modal-submit-username").addEventListener("click", function (event) {
         var usernameValue = document.getElementById("name-input").value;
-        const checkUsernameExists = scoreTrack.some(obj => obj.user === usernameValue);
-        if(!checkUsernameExists) {
-            scoreTrack.push({user: usernameValue, wrongAnswers: answersWrong});
-            scoreTrack.sort(function (a, b) {
-                return a.wrongAnswers - b.wrongAnswers;
-            });
-        }
-        var table = document.getElementById("leaderboard-table");
-        document.getElementById("leaderboard-caption").innerText = "You Won";
-        for (let i = 0; i < 5; i++) {
-            if (i < scoreTrack.length) {
-                var row = table.insertRow(i+1);
-                var usernameTableValue = row.insertCell(0);
-                usernameTableValue.innerText = scoreTrack[i].user;
-                var wrongAnswerTableValue = row.insertCell(1);
-                wrongAnswerTableValue.innerText = scoreTrack[i].wrongAnswers;
-            }
-        }
         document.getElementById("modal-box-win").style.display = "none";
         document.getElementById("leaderboard").style.display = "block";
         document.getElementById("leaderboard").style.visibility = "visible";
