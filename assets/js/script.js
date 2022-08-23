@@ -79,7 +79,6 @@ function keyboardSelectLetter (word) {
     document.addEventListener("keydown", function(event) {
         let keyPressed = event.key;
         let upperKeyPressed = keyPressed.toUpperCase();
-        buttonPressed(upperKeyPressed, word);
     });
 }
 
@@ -87,25 +86,9 @@ function mouseSelectLetter (word) {
     document.addEventListener("click", function(event) {
         let keyClicked = event.target.innerText;
         let upperKeyClicked = keyClicked.toUpperCase();
-        buttonPressed(upperKeyClicked, word);
     });
 }
 
-// Let the user both click/select the button on the screen and press the key
-function buttonPressed (key, word) {
-    console.log(individualLetters);
-    console.log(key);
-    console.log(word);
-    console.log(word.indexOf(key));
-    console.log(word.indexOf(key) > -1);
-    if (!lettersPressed.includes(key) && word.indexOf(key) > -1) {
-        rightLetterSelected(key);
-        addToPressedKeysArray(key);
-    } else if (!lettersPressed.includes(key)) {
-        wrongLetterSelected(key);
-        addToPressedKeysArray(key);
-    }
-}
 // if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
 function wrongLetterSelected (key) {
     if (wrongAnswerCounter < 7) {
