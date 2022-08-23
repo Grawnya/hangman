@@ -17,6 +17,9 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
     * [User Goals](#user-goals "User Goals")
     * [User Stories](#user-stories "User Stories")
     * [User Requirements and Expectations](#user-requirements-and-expectations)
+        * [Requirements](#requirements)
+        * [Expectations](#expectations)
+
 
 # UX
 
@@ -39,3 +42,16 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
 * Present basic introductory sentence to play the game.
 * Let the user know if the letter they select is contained within the word or not.
 * Entice the user to play again with aesthetically pleasing modal boxes.
+
+### Expectations
+* I expect the game to flow nicely with a clear, logical progression of the game.
+* I expect the website to be completely responsive to all screen sizes
+* I expect to set up the form if the user wins, so that it has to be correctly filled out in order for it to be successfully submitted and used to manipulate the DOM.
+* I expect the user to utilise the dark/light mode functionality of the website throughout the game.
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
