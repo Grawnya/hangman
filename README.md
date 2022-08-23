@@ -27,7 +27,8 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
 * [Wireframes](#wireframes "Wireframes")
 * [Features](#features "Features")
     * [Existing Features](#existing-features "Existing Features")
-    * [Home Page](#home-page "Home Page")
+        * [Home Page](#home-page "Home Page")
+        * [Game Screen (Core of the Application)](#game-screen-(core-of-the-application) "Game Screen (Core of the Application)")
 
 
 # UX
@@ -130,5 +131,24 @@ This can be seen in the screenshot below:
 ![Home Page](documentation/home-page-mobile.png)
 
 The larger screen sizes include room either side of the game so the image maintains its aspect ratio and the game is not stretched out. 
+\
+&nbsp;
+
+### Game Screen (Core of the Application)
+The game screen is the screen of most importance in the game as the user spends most of their time here when on the website. The game automatically begins by clearing the default letters HANGMAN, as well as removing the start button, hangman image and the introductory sentence. A keyboard is also introduced at the bottom of the screen, which is ideal for mobile or tablet users, who might not have an external keyboard.
+
+![Game Screen at the Start](documentation/game-screen-at-start.png)
+
+As the game progresses, the correct letters (i.e., the letters contained within the word) are included in the letters underlined on the screen and the associated key on the keyboard turns green.
+If the wrong letter is selected (i.e., a letter not found in the word) it is pasted underneath the word in the “Wrong” section and the key associated with the letter turns red on the keyboard, as seen below. The image also changes to add a body part to the hangman.
+
+![Game Screen During the Game](documentation/game-screen-progress.png)
+
+The user can continuously click on or press down keys until one of the 2 criteria are met to end the game:
+1. The user has selected all the letters found in the word and therefore has won or
+2. The user has selected 7 wrong letters and therefore, has ran out of option to select a new letter and has lost.
+
+Both options prompt the appearance of modal boxes.
+
 \
 &nbsp;
