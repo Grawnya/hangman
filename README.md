@@ -51,6 +51,7 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
     * [Web Aim Contrast Checker](#web-aim-contrast-checker "Web Aim Contrast Checker")
     * [Browser Compatibility](#browser-compatibility "Browser Compatibility")
     * [Manual Testing](#manual-testing "Manual Testing")	
+    * [Testing User Stories](#testing-user-stories "Testing User Stories")
 
 
 # UX
@@ -358,3 +359,23 @@ The following elements were constantly checked and tested to ensure that they wo
 	* Verified that the game can only start again if the user selects the “Play Again” button on the second modal box.
 \
 &nbsp;
+
+## Testing User Stories 
+1. As a user, I want to easily interact with the game.
+	* The design of the website has plenty of features that allow the user to engage with its content. It has buttons, which lead to progression from one stage to another. A keyboard which changes colour based on the right and wrong key input, having a knock-on effect; changing the letters shown on the screen and the hangman image. The light/dark icon for changing the colours of the page encourages interactivity.
+
+2. As a user, I want to know how to play the game.
+	* On the home page, there is a short statement on how to play the game – “Guess the missing Letters of a word using the keyboard”. The large start button prompts the user to select it and by selecting keys, the logical progression of the game means that the user will either lose of=r win at some point. These will trigger the modal boxes which will walk the user through playing the game again.
+
+3. As a user, I want to play a game that is not slow to run.
+	* This is vital to keep the user interested in the game, especially if they have poor Wi-Fi. The [Lighthouse](#lighthouse “Lighthouse”) section highlights that the game has high performance and accessibility results on both phone and desktop, which means that it’ll perform at a reasonably quick pace.
+
+4. As a user, I want to know if the letter I selected is in the word or not in the game.
+	* The logic of the game requires the user to know if they have selected a letter within the word, as this will dictate how many guesses they have left. The user is told that their letter selection is wrong if the key they have selected has been added to the “Wrong:” section and the key background has turned red. The hangman image will also add an extra body part. Similarly, if the letter is correct, the letter will be added to the word that the user is trying to solve in the section of underscores and the key will turn green.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
