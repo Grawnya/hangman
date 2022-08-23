@@ -52,6 +52,13 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
     * [Browser Compatibility](#browser-compatibility "Browser Compatibility")
     * [Manual Testing](#manual-testing "Manual Testing")	
     * [Testing User Stories](#testing-user-stories "Testing User Stories")
+* [Bugs](#bugs "Bugs")
+    * [Resolved](#resolved "Resolved")
+        * [Letters Not loading When Clicked](#letters-not-loading-when-clicked "Letters Not loading When Clicked")
+        * [Console Error for Selecting the Wrong Letters Before Anything is Clicked](#console-error-for-selecting-the-wrong-letters-before-anything-is clicked "Console Error for Selecting the Wrong Letters Before Anything is Clicked")
+        * [Setting off the Wrong Function when Filling in the Winning Modal Box Form](#setting-off-the-wrong-function-when-filling-in-the-winning-modal-box-form "Setting off the Wrong Function when Filling in the Winning Modal Box Form")
+        * [Page Would Refresh Every Time the Winning Form was Filled in](#page-would-refresh-every-time-the-winning-form-was-filled-in "Page Would Refresh Every Time the Winning Form was Filled in")
+
 
 
 # UX
@@ -379,3 +386,62 @@ The following elements were constantly checked and tested to ensure that they wo
 \
 &nbsp;
 
+# Bugs
+
+## Resolved
+### Letters Not loading When Clicked
+**Problem:**
+If a letter was pressed down with a key, it would appear in its correct place with an underscore if it was in the word. If the user clicked the key, which is important for most mobile users, any previously correct letters were replaced with underscores.
+
+**Cause:**
+The event listener for the start button was not targeted at the start button, but the whole page so anytime the user would click, it would restart the game again.
+
+**Resolution:**
+By adding the start game event listener to the start button and by altering the nesting of the functions so they had less of an impact on each other.
+
+**Before:**
+\
+&nbsp;
+![Before Clicking letters](documentation/letters-not-appearing-click.png)
+
+**After:**
+\
+&nbsp;
+![After Clicking Letters](documentation/game-screen-progress.png)
+
+### Console Error for Selecting the Wrong Letters Before Anything is Clicked
+**Problem:**
+Anytime the game was loaded, the console automatically logged an error for the changing of the background of the wrong key to red.
+
+**Cause:**
+As no key had been selected, it was deduced that the “null” value appeared due to the function running before the game began.
+
+**Resolution:** 
+An `if` statement was added to the function which deduces if a letter is correct or incorrect and if the key element is not equal to null, the code can run.
+
+**Fix:**
+\
+&nbsp;
+![Fixed if Statement](documentation/fix-for-console-error-with-wrong-key.png)
+
+### Setting off the Wrong Function when Filling in the Winning Modal Box Form
+**Problem:**
+Even if the user won the game, when they began to type in their username into the form, it would still prompt the user to register the letters as incorrect values if the letter was not in the word. Eventually this led to the user losing if they have more letters in their username that were not in the word.
+
+**Cause:**
+The wrong() function would still set off.
+
+**Resolution:**
+Remove the event listener and as a backup, introduce a function `resetEndGameValues()` that would prevent the user from setting off the losing game function unless they had 1000+ incorrect letters in their name that did not appear in the word.
+
+### Page Would Refresh Every Time the Winning Form was Filled in
+**Problem:**
+Every time the user won the game and they put in their username, as they hit the submit button, it would cause the game to restart.
+
+**Cause:**
+The form had an action that would refresh the page every time (i.e., `action = “#“`.
+
+**Resolution:**
+Include `event.preventDefault()` action into the function which obtains the username from the form.
+\
+&nbsp;
