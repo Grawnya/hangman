@@ -105,12 +105,14 @@ function mouseSelectLetter (word) {
     });
 }
 
-// if a letter is pressed and is wrong, the letter block is red, the counter is added and the hangman picture is updated
-function wrongLetterSelected (key) {
+// if a letter is pressed and is wrong, the letter block is red and the hangman picture is updated
+function wrong (key) {
     if (wrongAnswerCounter < 7) {
         document.getElementById(key).style.backgroundColor = "#f81307";
-        wrongAnswerCounter += 1;
-        
+        wrongAnswerToPrint += key + ", ";
+        document.getElementById("printing-wrong-letters").innerText = wrongAnswerToPrint;
+        wrongAnswers += 1;
+    
         switch (wrongAnswerCounter) {
             case 1:
                 document.getElementById('full-hangman-start').src = 'assets/images/frame_gain.png';
