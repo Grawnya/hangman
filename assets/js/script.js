@@ -1,13 +1,13 @@
 import { WORDS } from "./words.js";
 document.getElementById('keyboard').style.visibility = 'hidden';
-var wrongAnswerCounter = 0;
-var lettersPressed = [];
+var wrongAnswerToPrint = "Wrong: ";
+var selectedLetters = [];
+var wrongAnswers = 0;
 var lettersLeft = 7;
-var scoreTrack = [];
-clickStartButton();
 
 var word = "";
 var individualLetters = [];
+clickStartButton();
 
 function clickStartButton () {
     document.getElementById('game-type-buttons').addEventListener('click', function (event) {
