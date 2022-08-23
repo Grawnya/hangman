@@ -38,8 +38,12 @@ Welcome to a website dedicated to playing the popular childhood game Hangman. Th
     * [Tools](#tools "Tools")
 * [Testing](#testing "Testing")
     * [Code Validation](#code-validation "Code Validation")
+        * [W3C HTML Validator](#w3c-html-validator "W3C HTML Validator")
             * [First Attempt](#first-attempt-html "First Attempt")
             * [Final Attempt](#final-attempt-html "Final Attempt")
+        * [W3C CSS Validator](#w3c-css-validator "W3C CSS Validator")
+            * [First Attempt](#first-attempt-css "First Attempt")
+
 
 
 
@@ -240,3 +244,12 @@ No issues arose.
 ![Final W3C HTML Validator Test Result](documentation/w3c-html-validator-attempt-2.png)
 \
 &nbsp;
+
+### W3C CSS Validator 
+#### First Attempt (CSS)
+No issues arose. 
+
+![W3C CSS Validator Test Result](documentation/css_validator.png)
+\
+&nbsp;
+
