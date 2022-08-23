@@ -107,7 +107,7 @@ function mouseSelectLetter (word) {
 
 // if a letter is pressed and is wrong, the letter block is red and the hangman picture is updated
 function wrong (key) {
-    if (wrongAnswerCounter < 7) {
+    if (document.getElementById(key) !== null){
         document.getElementById(key).style.backgroundColor = "#f81307";
         wrongAnswerToPrint += key + ", ";
         document.getElementById("printing-wrong-letters").innerText = wrongAnswerToPrint;
@@ -162,16 +162,16 @@ function wrong (key) {
             }
                 break;
         }
-    }
-    if (wrongAnswers == 7) {
-        resetEndGameValues();
-        if (mode === "dark"){
-        document.getElementById('full-hangman-start').src = 'assets/images/full_body.png'; 
-    } else if (mode === "light") {
-        document.getElementById('full-hangman-start').src = 'assets/images/full_body_light.png';
-    }
-        document.getElementById("keyboard").style.visibility = "hidden";
-        document.removeEventListener("keydown", endGameLoser());
+        if (wrongAnswers == 7) {
+            resetEndGameValues();
+            if (mode === "dark"){
+                document.getElementById('full-hangman-start').src = 'assets/images/full_body.png'; 
+            } else if (mode === "light") {
+                document.getElementById('full-hangman-start').src = 'assets/images/full_body_light.png';
+            }
+            document.getElementById("keyboard").style.visibility = "hidden";
+            document.removeEventListener("keydown", endGameLoser());
+        }
     }
 }
 
