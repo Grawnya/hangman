@@ -192,10 +192,8 @@ function right (key) {
     }
 }
 
-// if the word is obtained, send message to say well done with a leaderboard and play again
-function winner () {
-    lettersLeft = 1000;
-    console.log("winner");
+// if all the right letters: prompt user for name, show score on leaderboard and ask to play again
+function endGameWinner () {
     var answersWrong = wrongAnswerCounter;
     document.getElementById("modal-box-win").style.display = "block";
     document.getElementById("modal-submit-username").addEventListener("click", function (event) {
@@ -282,4 +280,11 @@ function resetView () {
         item.innerText = "_";
     });
     document.getElementById('keyboard').style.visibility = 'visible';
+}
+
+// reset the end game values so they don't continue counting when the user puts in their username
+function resetEndGameValues () {
+    lettersLeft = 1000;
+    wrongAnswers = -1000;
+    selectedLetters = [];
 }
